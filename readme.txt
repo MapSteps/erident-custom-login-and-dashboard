@@ -1,13 +1,12 @@
 === Erident Custom Login and Dashboard ===
 Contributors: davidvongries, libinvbabu
-Donate link: https://www.paypal.me/LibinVBabu/25
 Tags: login, customisation, admin, dashboard, customise, erident, custom login, form, logo, customize, branding, login customizer, CSS, admin login, white label, login background, custom login page
 Requires at least: 3.0.0
-Tested up to: 5.7
+Tested up to: 5.9
 Stable tag: 3.5.9
-Requires PHP: 5.2
-License: GPLv2
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Requires PHP: 5.6
+License: GPL-3.0 License
+License URI: https://oss.ninja/gpl-3.0?organization=David%20Vongries&project=Erident%20Custom%20Login%20and%20Dashboard
 
 Customize completely your WordPress Login Screen easily. Add your logo, change background image, colors, styles, Dashboard footer etc.
 
