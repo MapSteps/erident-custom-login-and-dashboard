@@ -81,8 +81,10 @@ if ( ! empty( $opt ) ) {
 }
 function right_admin_footer_text_output( $er_right ) {
 	/*Get all options from db */
-	$er_options = get_option( 'plugin_erident_settings' );
-	return stripslashes( $er_options['dashboard_data_right'] );
+	$er_options   = get_option( 'plugin_erident_settings', [] );
+	$er_opt_right = isset( $er_options['dashboard_data_right'] ) ? $er_options['dashboard_data_right'] : '';
+
+	return stripslashes( $er_opt_right );
 }
 
 /* Adding media uploader */
