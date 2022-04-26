@@ -1,38 +1,21 @@
 <?php
 /*
-Plugin Name: Erident Custom Login and Dashboard
-Plugin URI: http://www.libin.in/
+Plugin Name: Custom Login and Dashboard
+Plugin URI: https://ultimatedashboard.io/
 Description: Customize completely your WordPress Login Screen and Dashboard. Add your company logo to login screen, change background colors, styles, button color etc. Customize your Dashboard footer text also for complete branding.
 Text Domain: erident-custom-login-and-dashboard
 Domain Path: /languages
 Version: 3.5.9
-Author: Libin V Babu
-Author URI: http://www.libin.in/
-License: GPL
-*/
-
-/*
-	Copyright 2021  Libin V Babu  (email : libin@libin.in)
-
-	This program is free software; you can redistribute it and/or modify
-	it under the terms of the GNU General Public License, version 2, as
-	published by the Free Software Foundation.
-
-	This program is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	GNU General Public License for more details.
-
-	You should have received a copy of the GNU General Public License
-	along with this program; if not, write to the Free Software
-	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+Author: David Vongries
+Author URI: https://davidvongries.com/
+License: GPL-3.0
 */
 
 load_plugin_textdomain( 'erident-custom-login-and-dashboard', false, basename( dirname( __FILE__ ) ) . '/languages/' );
 
 function er_admin_head() {
 	echo '<link rel="stylesheet" type="text/css" media="all" href="' . plugins_url( 'er-admin.css', __FILE__ ) . '">';
-	echo '<link rel="stylesheet" type="text/css" media="all" href="' . plugins_url( 'farbtastic/farbtastic.css', __FILE__ ) . '">';
+	echo '<link rel="stylesheet" type="text/css" media="all" href="' . plugins_url( 'assets/farbtastic/farbtastic.css', __FILE__ ) . '">';
 }
 
 add_action( 'admin_head', 'er_admin_head' );
@@ -313,7 +296,7 @@ function wp_erident_dashboard_install() {
 	$er_new_options = array(
 		'dashboard_data_left'         => 'Powered by YourWebsiteName',
 		'dashboard_data_right'        => '&copy; 2021 All Rights Reserved',
-		'dashboard_image_logo'        => plugins_url( 'images/default-logo.png', __FILE__ ),
+		'dashboard_image_logo'        => plugins_url( 'assets/images/default-logo.png', __FILE__ ),
 		'dashboard_image_logo_width'  => '274',
 		'dashboard_image_logo_height' => '63',
 		'dashboard_power_text'        => 'Powered by YourWebsiteName',
@@ -338,11 +321,11 @@ function wp_erident_dashboard_install() {
 		'dashboard_button_color'      => '#5E5E5E',
 		'dashboard_button_text_color' => '#FFFFFF',
 		'top_bg_color'                => '#f9fad2',
-		'top_bg_image'                => plugins_url( 'images/top_bg.jpg', __FILE__ ),
+		'top_bg_image'                => plugins_url( 'assets/images/top_bg.jpg', __FILE__ ),
 		'top_bg_repeat'               => 'repeat',
 		'top_bg_xpos'                 => 'top',
 		'top_bg_ypos'                 => 'left',
-		'login_bg_image'              => plugins_url( 'images/form_bg.jpg', __FILE__ ),
+		'login_bg_image'              => plugins_url( 'assets/images/form_bg.jpg', __FILE__ ),
 		'login_bg_repeat'             => 'repeat',
 		'login_bg_xpos'               => 'top',
 		'login_bg_ypos'               => 'left',
