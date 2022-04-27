@@ -1,5 +1,27 @@
 /**
  * --------------------------------------------------
+ * Animation
+ * --------------------------------------------------
+ */
+@-webkit-keyframes loadingSpinAround {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+@keyframes loadingSpinAround {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+/**
+ * --------------------------------------------------
  * Heatbox adjustment
  * --------------------------------------------------
  */
@@ -93,6 +115,55 @@ hr {
 
 .general-setting-field.is-tiny {
   width: 200px;
+}
+
+/**
+ * --------------------------------------------------
+ * Button
+ * --------------------------------------------------
+ */
+.button.cldashboard-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cldashboard-button.is-loading {
+  justify-content: center;
+  color: transparent !important;
+  pointer-events: none;
+}
+
+.cldashboard-button.is-loading::after {
+  content: "";
+  position: absolute;
+  width: 1em;
+  display: block;
+  height: 1em;
+  border: 2px solid #dbdbdb;
+  border-color: transparent transparent #fff #fff !important;
+  border-radius: 290486px;
+  -webkit-animation: loadingSpinAround 0.5s infinite linear;
+  animation: loadingSpinAround 0.5s infinite linear;
+}
+
+.cldashboard-reset-button {
+  margin-left: 10px;
+  color: #fff;
+  background-color: tomato;
+  border-color: tomato;
+}
+
+.cldashboard-reset-button:hover,
+.cldashboard-reset-button:active,
+.cldashboard-reset-button:focus {
+  color: #fff;
+  background-color: #f5492a;
+  border-color: #f5492a;
+}
+
+.cldashboard-reset-button:focus {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 3px #f5492a;
 }
 
 /**

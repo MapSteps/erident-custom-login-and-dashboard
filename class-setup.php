@@ -61,6 +61,9 @@ class Setup {
 		add_action( 'admin_init', array( $this, 'process_export' ) );
 		add_action( 'admin_init', array( $this, 'process_import' ) );
 
+		// Ajax handlers.
+		new Ajax\Save_Settings();
+
 	}
 
 	/**
@@ -167,8 +170,7 @@ class Setup {
 			'CustomLoginDashboard',
 			array(
 				'nonces' => array(
-					// Just leave it here so we can copy paste this when needed.
-					'dummyForLater' => wp_create_nonce( 'dummy_for_later' ),
+					'saveSettings' => wp_create_nonce( 'cldashboard_nonce_save_settings' ),
 				),
 			)
 		);

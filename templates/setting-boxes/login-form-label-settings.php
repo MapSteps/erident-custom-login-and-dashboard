@@ -51,7 +51,7 @@ return function ( $settings ) {
 				<div class="field-body">
 					<div class="field">
 						<div class="control">
-							<input type="number" min="0" max="1" step="0.1" name="dashboard_label_text_size" id="dashboard_label_text_size" value="<?php echo esc_attr( $font_size ); ?>" class="general-setting-field is-tiny">
+							<input type="number" min="0" step="1" name="dashboard_label_text_size" id="dashboard_label_text_size" value="<?php echo esc_attr( $font_size ); ?>" class="general-setting-field is-tiny">
 							<code>px</code>
 						</div>
 					</div>

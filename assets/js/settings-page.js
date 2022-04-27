@@ -6,6 +6,34 @@
  */
 (function ($) {
   /**
+   * The settings form.
+   *
+   * @param HTMLElement form The form element.
+   */
+  var form = document.querySelector(".cldashboard-settings-form");
+
+  /**
+   * The settings form.
+   *
+   * @param HTMLElement form The form element.
+   */
+  var fields = document.querySelectorAll(
+    ".cldashboard-settings-form .general-setting-field"
+  );
+
+  /**
+   * The submit button.
+   *
+   * @param HTMLElement form The form element.
+   */
+  var submitButton = document.querySelector("#submit");
+
+  /**
+   * Whether or not the form is currently being submitted.
+   */
+  var isProcessing = false;
+
+  /**
    * Initialize the module, call the main functions.
    *
    * This function is the only function that should be called on top level scope.
@@ -24,6 +52,11 @@
     if (logoImageField) setupMediaField(logoImageField);
 
     setupChainingFields();
+
+    if (form & submitButton) {
+      submitButton.classList.add("cldashboard-button");
+      form.addEventListener("submit", onSubmit);
+    }
   }
 
   /**
@@ -252,6 +285,77 @@
         child.style.display = shownDisplayType;
       }
     }
+  }
+
+  function startLoading() {
+    if (submitButton) submitButton.classList.add("is-loading");
+  }
+
+  function stopLoading() {
+    if (submitButton) submitButton.classList.remove("is-loading");
+  }
+
+  /**
+   * Function to run on form submit.
+   *
+   * @param Event e The event object.
+   */
+  function onSubmit(e) {
+    e.preventDefault();
+    if (isProcessing) return;
+    isProcessing = true;
+    startLoading();
+
+    var data = {};
+
+    [].slice.call(fields).forEach(function (field) {
+      var value = false;
+
+      if (field.tagName.toLoweCase() === "select") {
+        if (field.multiple) {
+          value = JSON.stringify($(field).val());
+        } else {
+          if (field.selectedIndex) {
+            value = field.options[field.selectedIndex].value;
+          } else {
+            value = field.value;
+          }
+        }
+      } else {
+        if (field.type === "checkbox" || field.type === "radio") {
+          if (field.checked) {
+            value = field.value;
+          }
+        } else {
+          value = field.value;
+        }
+      }
+
+      if (value !== false) data[field.name] = value;
+    });
+
+    data.action = "cldashboard_save_settings";
+    data.nonce = CustomLoginDashboard.nonces.saveSettings;
+
+    $.ajax({
+      url: ajaxurl,
+      type: "POST",
+      data: data,
+    })
+      .done(function (r) {
+        if (!r || !r.success) return;
+      })
+      .fail(function (jqXHR) {
+        var errorMesssage = "Something went wrong";
+
+        if (jqXHR.responseJSON && jqXHR.responseJSON.data) {
+          errorMesssage = jqXHR.responseJSON.data;
+        }
+      })
+      .always(function () {
+        isProcessing = false;
+        stopLoading();
+      });
   }
 
   // Run the module.

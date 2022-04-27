@@ -129,8 +129,8 @@ class Output {
 			$login_default_opacity = '1';
 		}
 
-		$btn_rgba = custom_login_dashboard_hex2rgb( $settings['dashboard_button_color'] );
-		$login_bg = custom_login_dashboard_hex2rgb( $settings['dashboard_login_bg'] );
+		$btn_rgba = cldashboard_hex2rgb( $settings['dashboard_button_color'] );
+		$login_bg = cldashboard_hex2rgb( $settings['dashboard_login_bg'] );
 		?>
 
 		<style type="text/css">
