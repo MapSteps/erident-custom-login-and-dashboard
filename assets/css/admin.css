@@ -1,0 +1,172 @@
+/**
+ * --------------------------------------------------
+ * Heatbox adjustment
+ * --------------------------------------------------
+ */
+/* exists to display the updated icon */
+.heatbox h2 {
+	position: relative;
+}
+
+.heatbox-cols {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.swift-control-settings .heatbox-main {
+	width: 55%;
+}
+
+.swift-control-settings .heatbox-sidebar {
+	width: 43%;
+}
+
+.swift-control-settings .heatbox-sidebar .widget-item {
+	margin-top: 8px;
+}
+
+.swift-control-settings
+	.heatbox-sidebar
+	.widget-items
+	.widget-item:first-child {
+	margin-top: 0;
+}
+
+/**
+ * ------------------------------
+ * Setting fields
+ * ------------------------------
+ */
+.setting-fields {
+	padding: 25px 15px;
+}
+
+.setting-fields.is-gapless {
+	padding: 0;
+}
+
+.setting-fields .label {
+	display: block;
+	font-weight: 600;
+}
+
+.setting-fields .description {
+	font-weight: 400;
+}
+
+hr {
+	margin: 20px 0;
+	border-top: 1px solid #eee;
+	border-bottom: 0;
+}
+
+.setting-fields .field:last-child {
+	margin-bottom: 0;
+}
+
+.setting-fields .field {
+	margin-bottom: 20px;
+}
+
+.field.is-horizontal {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.field.is-horizontal .field-label {
+	width: 30%;
+}
+
+.field.is-horizontal .field-body {
+	padding-left: 20px;
+	width: 70%;
+}
+
+.general-setting-field[type="text"] {
+	width: 500px;
+}
+
+/**
+ * --------------------------------------------------
+ * Color picker
+ * --------------------------------------------------
+ */
+.iris-picker-inner {
+	display: grid;
+	grid-template-columns: 1fr 20px 20px;
+	grid-gap: 7px;
+}
+
+.iris-picker-inner > * {
+	width: 100% !important;
+	margin-left: 0 !important;
+}
+
+/**
+ * --------------------------------------------------
+ * Tools
+ * --------------------------------------------------
+ */
+.cldashboard-tools-container {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.cldashboard-tools-container .heatbox {
+	display: flex;
+	flex-direction: column;
+	flex: 0 49%;
+	margin-right: 2%;
+}
+
+.cldashboard-tools-container .heatbox:nth-child(even) {
+	margin-right: 0;
+}
+
+.cldashboard-tools-container p.submit {
+	margin-bottom: 0;
+}
+
+@media screen and (max-width:768px) {
+	.cldashboard-tools-container .heatbox {
+		flex: 0 100%;
+		margin-right: 0;
+	}
+}
+
+/**
+ * --------------------------------------------------
+ * Featured products
+ * --------------------------------------------------
+ */
+.featured-products > h2 {
+	text-align: center;
+	margin-bottom: 50px;
+	font-size: 24px;
+}
+
+.featured-products .products {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.featured-products .products li {
+	width: 32%;
+}
+
+.featured-products .products .subheadline {
+	font-weight: 600;
+	margin-top: -6px;
+}
+
+.featured-products .products img {
+	max-width: 100%;
+}
+
+.featured-products .credit {
+	margin-top: 20px;
+	text-align: center;
+	opacity: 0.5;
+}
