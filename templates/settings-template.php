@@ -36,11 +36,11 @@ return function () {
 
 				<nav>
 					<ul class="heatbox-tab-nav">
-						<li class="heatbox-tab-nav-item cldashboard-general-panel">
-							<a href="#general"><?php _e( 'General', 'erident-custom-login-and-dashboard' ); ?></a>
+						<li class="heatbox-tab-nav-item cldashboard-login-screen-panel">
+							<a href="#login-screen"><?php _e( 'Login Screen', 'erident-custom-login-and-dashboard' ); ?></a>
 						</li>
-						<li class="heatbox-tab-nav-item cldashboard-login-page-panel">
-							<a href="#login-page"><?php _e( 'Login Page', 'erident-custom-login-and-dashboard' ); ?></a>
+						<li class="heatbox-tab-nav-item cldashboard-dashboard-panel">
+							<a href="#dashboard"><?php _e( 'Dashboard', 'erident-custom-login-and-dashboard' ); ?></a>
 						</li>
 						<li class="heatbox-tab-nav-item cldashboard-tools-panel">
 							<a href="#tools"><?php _e( 'Tools', 'erident-custom-login-and-dashboard' ); ?></a>
@@ -58,7 +58,7 @@ return function () {
 
 				<div>
 					<form method="post" action="options.php" class="cldashboard-settings-form">
-						<div class="heatbox-admin-panel cldashboard-general-panel">
+						<div class="heatbox-admin-panel cldashboard-dashboard-panel">
 							<?php
 							$dashboard_settings_box = require __DIR__ . '/setting-boxes/dashboard-settings.php';
 							$dashboard_settings_box( $settings );
@@ -68,7 +68,7 @@ return function () {
 							?>
 						</div>
 
-						<div class="heatbox-admin-panel cldashboard-login-page-panel">
+						<div class="heatbox-admin-panel cldashboard-login-screen-panel">
 							<?php
 							$login_logo_settings_box = require_once __DIR__ . '/setting-boxes/login-logo-settings.php';
 							$login_logo_settings_box( $settings );

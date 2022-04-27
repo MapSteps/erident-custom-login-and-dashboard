@@ -75,7 +75,7 @@
         hashValue = currentActiveTabMenu
           ? currentActiveTabMenu.dataset.tab
           : "";
-        hashValue = hashValue ? hashValue : "general";
+        hashValue = hashValue ? hashValue : "login-screen";
       }
 
       if ("tools" === hashValue) {
