@@ -129,7 +129,13 @@ class Setup {
 			return;
 		}
 
-		wp_enqueue_media();
+		if ( function_exists( 'wp_enqueue_media' ) ) {
+			wp_enqueue_media();
+		} else {
+			wp_enqueue_style( 'thickbox' );
+			wp_enqueue_script( 'media-upload' );
+			wp_enqueue_script( 'thickbox' );
+		}
 
 		// CSS dependencies.
 

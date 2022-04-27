@@ -27,7 +27,7 @@ return function ( $settings ) {
 			<div class="field is-horizontal">
 				<div class="field-label">
 					<label for="dashboard_data_left" class="label">
-						Left side footer text:
+						Left side footer text
 						<p class="description">
 							This will replace the default "Thank you for creating with WordPress" on the footer left side of admin area.
 						</p>
@@ -45,7 +45,7 @@ return function ( $settings ) {
 			<div class="field is-horizontal">
 				<div class="field-label">
 					<label for="dashboard_data_right" class="label">
-						Right side footer text:
+						Right side footer text
 						<p class="description">
 							This will replace the default "WordPress Version" on the footer right side of admin area.
 						</p>

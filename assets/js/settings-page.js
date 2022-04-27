@@ -5,193 +5,255 @@
  * @return {Object}
  */
 (function ($) {
-	/**
-	 * Initialize the module, call the main functions.
-	 *
-	 * This function is the only function that should be called on top level scope.
-	 * Other functions are called / hooked from this function.
-	 */
-	function init() {
-		setupTabsNavigation();
-		setupChainingFields();
-	}
+  /**
+   * Initialize the module, call the main functions.
+   *
+   * This function is the only function that should be called on top level scope.
+   * Other functions are called / hooked from this function.
+   */
+  function init() {
+    setupColorPicker();
+    setupTabsNavigation();
 
-	/**
-	 * Setup the tabs navigation for settings page.
-	 */
-	function setupTabsNavigation() {
-		$(".heatbox-tab-nav-item").on("click", function () {
-			$(".heatbox-tab-nav-item").removeClass("active");
-			$(this).addClass("active");
+    var bgImageField = document.querySelector(".cldashboard-bg-image-field");
+    if (bgImageField) setupMediaField(bgImageField);
 
-			var link = this.querySelector("a");
+    var logoImageField = document.querySelector(
+      ".cldashboard-logo-image-field"
+    );
+    if (logoImageField) setupMediaField(logoImageField);
 
-			if (link.href.indexOf("#") === -1) return;
+    setupChainingFields();
+  }
 
-			var hashValue = link.href.substring(link.href.indexOf("#") + 1);
+  /**
+   * Setup color picker for color picker fields.
+   */
+  function setupColorPicker() {
+    $(".color-picker-field").wpColorPicker({
+      palettes: true,
+      hide: true,
+    });
+  }
 
-			if ("tools" === hashValue) {
-				$(".cldashboard-settings-form .submit").hide();
-			} else {
-				$(".cldashboard-settings-form .submit").show();
-			}
+  /**
+   * Setup the tabs navigation for settings page.
+   */
+  function setupTabsNavigation() {
+    $(".heatbox-tab-nav-item").on("click", function () {
+      $(".heatbox-tab-nav-item").removeClass("active");
+      $(this).addClass("active");
 
-			$(".heatbox-form-container .heatbox-admin-panel").css("display", "none");
+      var link = this.querySelector("a");
 
-			$(".heatbox-form-container .cldashboard-" + hashValue + "-panel").css(
-				"display",
-				"block"
-			);
-		});
+      if (link.href.indexOf("#") === -1) return;
 
-		window.addEventListener("load", function () {
-			var hashValue = window.location.hash.substring(1);
-			var currentActiveTabMenu;
+      var hashValue = link.href.substring(link.href.indexOf("#") + 1);
 
-			if (!hashValue) {
-				currentActiveTabMenu = document.querySelector(
-					".heatbox-tab-nav-item.active"
-				);
-				hashValue = currentActiveTabMenu
-					? currentActiveTabMenu.dataset.tab
-					: "";
-				hashValue = hashValue ? hashValue : "settings";
-			}
+      if ("tools" === hashValue) {
+        $(".cldashboard-settings-form .submit").hide();
+      } else {
+        $(".cldashboard-settings-form .submit").show();
+      }
 
-			if ("tools" === hashValue) {
-				$(".cldashboard-settings-form .submit").hide();
-			} else {
-				$(".cldashboard-settings-form .submit").show();
-			}
+      $(".heatbox-form-container .heatbox-admin-panel").css("display", "none");
 
-			$(".heatbox-tab-nav-item").removeClass("active");
-			$(".heatbox-tab-nav-item.cldashboard-" + hashValue + "-panel").addClass(
-				"active"
-			);
+      $(".heatbox-form-container .cldashboard-" + hashValue + "-panel").css(
+        "display",
+        "block"
+      );
+    });
 
-			$(".heatbox-form-container .heatbox-admin-panel").css("display", "none");
+    window.addEventListener("load", function () {
+      var hashValue = window.location.hash.substring(1);
+      var currentActiveTabMenu;
 
-			$(".heatbox-form-container .cldashboard-" + hashValue + "-panel").css(
-				"display",
-				"block"
-			);
-		});
-	}
+      if (!hashValue) {
+        currentActiveTabMenu = document.querySelector(
+          ".heatbox-tab-nav-item.active"
+        );
+        hashValue = currentActiveTabMenu
+          ? currentActiveTabMenu.dataset.tab
+          : "";
+        hashValue = hashValue ? hashValue : "general";
+      }
 
-	/**
-	 * Setup fields chaining/ dependency.
-	 */
-	function setupChainingFields() {
-		var selectors = [
-			"[data-show-if-field]",
-			"[data-hide-if-field]",
-			"[data-show-if-field-checked]",
-			"[data-show-if-field-unchecked]",
-		];
+      if ("tools" === hashValue) {
+        $(".cldashboard-settings-form .submit").hide();
+      } else {
+        $(".cldashboard-settings-form .submit").show();
+      }
 
-		selectors.forEach(function (selector) {
-			var children = document.querySelectorAll(selector);
-			if (!children.length) return;
+      $(".heatbox-tab-nav-item").removeClass("active");
+      $(".heatbox-tab-nav-item.cldashboard-" + hashValue + "-panel").addClass(
+        "active"
+      );
 
-			[].slice.call(children).forEach(function (child) {
-				setupChainingEvent(child, selector);
-			});
-		});
-	}
+      $(".heatbox-form-container .heatbox-admin-panel").css("display", "none");
 
-	/**
-	 * Setup fields chaining event.
-	 *
-	 * @param {HTMLElement} child The children element.
-	 * @param selector child The selector that belongs to the children element.
-	 */
-	function setupChainingEvent(child, selector) {
-		var parentName = child.getAttribute(
-			selector.replace("[", "").replace("]", "")
-		);
-		var parentField = document.querySelector("#" + parentName);
+      $(".heatbox-form-container .cldashboard-" + hashValue + "-panel").css(
+        "display",
+        "block"
+      );
+    });
+  }
 
-		var shownDisplayType = window.getComputedStyle(child).display;
-		shownDisplayType = shownDisplayType ? shownDisplayType : "block";
+  /**
+   * Setup media field.
+   */
+  function setupMediaField(field) {
+    var wpMedia;
 
-		checkChainingState(child, shownDisplayType, parentField);
+    wpMedia = wp
+      .media({
+        title: "Choose Background Image",
+        button: {
+          text: "Upload Image",
+        },
+        multiple: false, // Set this to true to allow multiple files to be selected
+      })
+      .on("select", function () {
+        var attachment = wpMedia.state().get("selection").first().toJSON();
+        field.value = attachment.url;
+        field.dispatchEvent(new Event("change"));
+      });
 
-		if (parentField.classList.contains("use-select2")) {
-			$(parentField).on("change", function (e) {
-				checkChainingState(child, shownDisplayType, parentField);
-			});
-		} else {
-			parentField.addEventListener("change", function (e) {
-				checkChainingState(child, shownDisplayType, parentField);
-			});
-		}
-	}
+    var uploadButton = field.parentNode.querySelector(
+      ".cldashboard-upload-button"
+    );
 
-	/**
-	 * Check the children state: shown or hidden.
-	 *
-	 * @param {HTMLElement} child The children element.
-	 * @param string shownDisplayType The display type of child when it's shown (e.g: "flex" or "block").
-	 * @param {HTMLElement} parent The parent/ dependency element.
-	 */
-	function checkChainingState(child, shownDisplayType, parent) {
-		var parentTagName = parent.tagName.toLocaleLowerCase();
+    if (uploadButton) {
+      uploadButton.addEventListener("click", function (e) {
+        wpMedia.open();
+      });
+    }
 
-		if (parentTagName === "input" && parent.type === "checkbox") {
-			// Handle "data-show-if-field-checked".
-			if (child.hasAttribute("data-show-if-field-checked")) {
-				if (parent.checked) {
-					child.style.display = shownDisplayType;
-				} else {
-					child.style.display = "none";
-				}
-			} else {
-				// Handle "data-show-if-field-unchecked".
-				if (!parent.checked) {
-					child.style.display = shownDisplayType;
-				} else {
-					child.style.display = "none";
-				}
-			}
+    var clearButton = field.parentNode.querySelector(
+      ".cldashboard-clear-button"
+    );
 
-			return;
-		}
+    if (clearButton) {
+      clearButton.addEventListener("click", function (e) {
+        field.value = "";
+        field.dispatchEvent(new Event("change"));
+      });
+    }
+  }
 
-		var wantedValue = child.hasAttribute("data-show-if-field")
-			? child.dataset.showIfValue
-			: child.dataset.hideIfValue;
-		var parentValue;
+  /**
+   * Setup fields chaining/ dependency.
+   */
+  function setupChainingFields() {
+    var selectors = [
+      "[data-show-if-field]",
+      "[data-hide-if-field]",
+      "[data-show-if-field-checked]",
+      "[data-show-if-field-unchecked]",
+    ];
 
-		if (parentTagName === "select") {
-			if (parent.multiple) {
-				parentValue = $(parent).val();
-				wantedValue = JSON.parse(wantedValue);
-			} else {
-				if (parent.selectedIndex > -1) {
-					parentValue = parent.options[parent.selectedIndex].value;
-				}
-			}
-		} else {
-			parentValue = parent.value;
-		}
+    selectors.forEach(function (selector) {
+      var children = document.querySelectorAll(selector);
+      if (!children.length) return;
 
-		// Handle "data-show-if-field".
-		if (child.hasAttribute("data-show-if-field")) {
-			if (parentValue === wantedValue) {
-				child.style.display = shownDisplayType;
-			} else {
-				child.style.display = "none";
-			}
-		} else {
-			// Handle "data-hide-if-field".
-			if (JSON.stringify(parentValue) === JSON.stringify(wantedValue)) {
-				child.style.display = "none";
-			} else {
-				child.style.display = shownDisplayType;
-			}
-		}
-	}
+      [].slice.call(children).forEach(function (child) {
+        setupChainingEvent(child, selector);
+      });
+    });
+  }
 
-	// Run the module.
-	init();
+  /**
+   * Setup fields chaining event.
+   *
+   * @param {HTMLElement} child The children element.
+   * @param selector child The selector that belongs to the children element.
+   */
+  function setupChainingEvent(child, selector) {
+    var parentName = child.getAttribute(
+      selector.replace("[", "").replace("]", "")
+    );
+    var parentField = document.querySelector("#" + parentName);
+
+    var shownDisplayType = window.getComputedStyle(child).display;
+    shownDisplayType = shownDisplayType ? shownDisplayType : "block";
+
+    checkChainingState(child, shownDisplayType, parentField);
+
+    if (parentField.classList.contains("use-select2")) {
+      $(parentField).on("change", function (e) {
+        checkChainingState(child, shownDisplayType, parentField);
+      });
+    } else {
+      parentField.addEventListener("change", function (e) {
+        checkChainingState(child, shownDisplayType, parentField);
+      });
+    }
+  }
+
+  /**
+   * Check the children state: shown or hidden.
+   *
+   * @param {HTMLElement} child The children element.
+   * @param string shownDisplayType The display type of child when it's shown (e.g: "flex" or "block").
+   * @param {HTMLElement} parent The parent/ dependency element.
+   */
+  function checkChainingState(child, shownDisplayType, parent) {
+    var parentTagName = parent.tagName.toLocaleLowerCase();
+
+    if (parentTagName === "input" && parent.type === "checkbox") {
+      // Handle "data-show-if-field-checked".
+      if (child.hasAttribute("data-show-if-field-checked")) {
+        if (parent.checked) {
+          child.style.display = shownDisplayType;
+        } else {
+          child.style.display = "none";
+        }
+      } else {
+        // Handle "data-show-if-field-unchecked".
+        if (!parent.checked) {
+          child.style.display = shownDisplayType;
+        } else {
+          child.style.display = "none";
+        }
+      }
+
+      return;
+    }
+
+    var wantedValue = child.hasAttribute("data-show-if-field")
+      ? child.dataset.showIfValue
+      : child.dataset.hideIfValue;
+    var parentValue;
+
+    if (parentTagName === "select") {
+      if (parent.multiple) {
+        parentValue = $(parent).val();
+        wantedValue = JSON.parse(wantedValue);
+      } else {
+        if (parent.selectedIndex > -1) {
+          parentValue = parent.options[parent.selectedIndex].value;
+        }
+      }
+    } else {
+      parentValue = parent.value;
+    }
+
+    // Handle "data-show-if-field".
+    if (child.hasAttribute("data-show-if-field")) {
+      if (parentValue === wantedValue) {
+        child.style.display = shownDisplayType;
+      } else {
+        child.style.display = "none";
+      }
+    } else {
+      // Handle "data-hide-if-field".
+      if (JSON.stringify(parentValue) === JSON.stringify(wantedValue)) {
+        child.style.display = "none";
+      } else {
+        child.style.display = shownDisplayType;
+      }
+    }
+  }
+
+  // Run the module.
+  init();
 })(jQuery);

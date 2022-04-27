@@ -8,7 +8,7 @@
 defined( 'ABSPATH' ) || die( "Can't access directly" );
 
 /**
- * Display dashboard settings template.
+ * Display misc. settings template.
  *
  * @param array $settings The plugin settings.
  */

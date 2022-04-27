@@ -25,7 +25,7 @@ return function () {
 							<?php _e( 'Custom Login & Dashboard', 'erident-custom-login-and-dashboard' ); ?>
 							<span class="version"><?php echo esc_html( CUSTOM_LOGIN_DASHBOARD_PLUGIN_VERSION ); ?></span>
 						</span>
-						<p class="subtitle"><?php _e( 'Top rated plugin for Login Page Customization!.', 'erident-custom-login-and-dashboard' ); ?></p>
+						<p class="subtitle"><?php _e( 'Top rated plugin for Login Page Customization!', 'erident-custom-login-and-dashboard' ); ?></p>
 					</div>
 
 					<div>
@@ -36,13 +36,13 @@ return function () {
 
 				<nav>
 					<ul class="heatbox-tab-nav">
-						<li class="heatbox-tab-nav-item cldsahboard-general-panel">
+						<li class="heatbox-tab-nav-item cldashboard-general-panel">
 							<a href="#general"><?php _e( 'General', 'erident-custom-login-and-dashboard' ); ?></a>
 						</li>
-						<li class="heatbox-tab-nav-item cldsahboard-login-page-panel">
+						<li class="heatbox-tab-nav-item cldashboard-login-page-panel">
 							<a href="#login-page"><?php _e( 'Login Page', 'erident-custom-login-and-dashboard' ); ?></a>
 						</li>
-						<li class="heatbox-tab-nav-item cldsahboard-tools-panel">
+						<li class="heatbox-tab-nav-item cldashboard-tools-panel">
 							<a href="#tools"><?php _e( 'Tools', 'erident-custom-login-and-dashboard' ); ?></a>
 						</li>
 					</ul>
@@ -70,7 +70,14 @@ return function () {
 
 						<div class="heatbox-admin-panel cldashboard-login-page-panel">
 							<?php
-							require_once __DIR__ . '/setting-boxes/login-bg-settings.php';
+							$login_logo_settings_box = require_once __DIR__ . '/setting-boxes/login-logo-settings.php';
+							$login_logo_settings_box( $settings );
+
+							$login_bg_settings_box = require_once __DIR__ . '/setting-boxes/login-bg-settings.php';
+							$login_bg_settings_box( $settings );
+
+							$login_form_settings_box = require_once __DIR__ . '/setting-boxes/login-form-settings.php';
+							$login_form_settings_box( $settings );
 							?>
 						</div>
 
