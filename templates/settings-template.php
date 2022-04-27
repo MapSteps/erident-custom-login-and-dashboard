@@ -39,8 +39,8 @@ return function () {
 						<li class="heatbox-tab-nav-item cldashboard-login-screen-panel">
 							<a href="#login-screen"><?php _e( 'Login Screen', 'erident-custom-login-and-dashboard' ); ?></a>
 						</li>
-						<li class="heatbox-tab-nav-item cldashboard-dashboard-panel">
-							<a href="#dashboard"><?php _e( 'Dashboard', 'erident-custom-login-and-dashboard' ); ?></a>
+						<li class="heatbox-tab-nav-item cldashboard-dashboard-settings-panel">
+							<a href="#dashboard-settings"><?php _e( 'Dashboard Settings', 'erident-custom-login-and-dashboard' ); ?></a>
 						</li>
 						<li class="heatbox-tab-nav-item cldashboard-tools-panel">
 							<a href="#tools"><?php _e( 'Tools', 'erident-custom-login-and-dashboard' ); ?></a>
@@ -58,7 +58,7 @@ return function () {
 
 				<div>
 					<form method="post" action="options.php" class="cldashboard-settings-form">
-						<div class="heatbox-admin-panel cldashboard-dashboard-panel">
+						<div class="heatbox-admin-panel cldashboard-dashboard-settings-panel">
 							<?php
 							$dashboard_settings_box = require __DIR__ . '/setting-boxes/dashboard-settings.php';
 							$dashboard_settings_box( $settings );
