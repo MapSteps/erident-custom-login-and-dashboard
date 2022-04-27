@@ -29,7 +29,7 @@ return function () {
 					</div>
 
 					<div>
-						<img src="<?php echo esc_url( CUSTOM_LOGIN_DASHBOARD_PLUGIN_URL ); ?>/assets/images/logo.png">
+						<img src="<?php echo esc_url( CUSTOM_LOGIN_DASHBOARD_PLUGIN_URL ); ?>/assets/images/erident-logo.png">
 					</div>
 
 				</div>
