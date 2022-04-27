@@ -99,14 +99,14 @@ return function () {
 
 			<ul class="products">
 				<li class="heatbox">
-					<a href="https://wordpress.org/plugins/better-admin-bar/" target="_blank">
-						<img src="<?php echo esc_url( CUSTOM_LOGIN_DASHBOARD_PLUGIN_URL ); ?>/assets/images/swift-control.jpg">
+					<a href="https://wordpress.org/plugins/ultimate-dashboard/" target="_blank">
+						<img src="<?php echo esc_url( CUSTOM_LOGIN_DASHBOARD_PLUGIN_URL ); ?>/assets/images/ultimate-dashboard.jpg">
 					</a>
 					<div class="heatbox-content">
-						<h3><?php _e( 'Better Admin Bar', 'erident-custom-login-and-dashboard' ); ?></h3>
-						<p class="subheadline"><?php _e( 'Replace the boring WordPress Admin Bar with this!', 'erident-custom-login-and-dashboard' ); ?></p>
-						<p><?php _e( 'Better Admin Bar is the plugin that make your clients love WordPress. It drastically improves the user experience when working with WordPress and allows you to replace the boring WordPress admin bar with your own navigation panel.', 'erident-custom-login-and-dashboard' ); ?></p>
-						<a href="https://wordpress.org/plugins/better-admin-bar/" target="_blank" class="button"><?php _e( 'View Features', 'erident-custom-login-and-dashboard' ); ?></a>
+						<h3><?php _e( 'Ultimate Dashboard', 'erident-custom-login-and-dashboard' ); ?></h3>
+						<p class="subheadline"><?php _e( 'Fully customize your WordPress Dashboard.', 'erident-custom-login-and-dashboard' ); ?></p>
+						<p><?php _e( 'Ultimate Dashboard is the #1 plugin to create a Custom WordPress Dashboard for you and your clients. It also comes with Multisite Support which makes it the perfect plugin for your WaaS network.', 'erident-custom-login-and-dashboard' ); ?></p>
+						<a href="https://wordpress.org/plugins/ultimate-dashboard/" target="_blank" class="button"><?php _e( 'View Features', 'erident-custom-login-and-dashboard' ); ?></a>
 					</div>
 				</li>
 				<li class="heatbox">
@@ -121,14 +121,14 @@ return function () {
 					</div>
 				</li>
 				<li class="heatbox">
-					<a href="https://wordpress.org/plugins/responsive-youtube-vimeo-popup/" target="_blank">
-						<img src="<?php echo esc_url( CUSTOM_LOGIN_DASHBOARD_PLUGIN_URL ); ?>/assets/images/wp-video-popup.jpg">
+					<a href="https://wordpress.org/plugins/better-admin-bar/" target="_blank">
+						<img src="<?php echo esc_url( CUSTOM_LOGIN_DASHBOARD_PLUGIN_URL ); ?>/assets/images/swift-control.jpg">
 					</a>
 					<div class="heatbox-content">
-						<h3><?php _e( 'WP Video Popup', 'erident-custom-login-and-dashboard' ); ?></h3>
-						<p class="subheadline"><?php _e( 'The #1 Video Popup Plugin for WordPress.', 'erident-custom-login-and-dashboard' ); ?></p>
-						<p><?php _e( 'Add beautiful responsive YouTube & Vimeo video lightbox popups to any post, page or custom post type of website without sacrificing performance.', 'erident-custom-login-and-dashboard' ); ?></p>
-						<a href="https://wordpress.org/plugins/responsive-youtube-vimeo-popup/" target="_blank" class="button"><?php _e( 'View Features', 'erident-custom-login-and-dashboard' ); ?></a>
+						<h3><?php _e( 'Better Admin Bar', 'erident-custom-login-and-dashboard' ); ?></h3>
+						<p class="subheadline"><?php _e( 'Replace the boring WordPress Admin Bar with this!', 'erident-custom-login-and-dashboard' ); ?></p>
+						<p><?php _e( 'Better Admin Bar is the plugin that make your clients love WordPress. It drastically improves the user experience when working with WordPress and allows you to replace the boring WordPress admin bar with your own navigation panel.', 'erident-custom-login-and-dashboard' ); ?></p>
+						<a href="https://wordpress.org/plugins/better-admin-bar/" target="_blank" class="button"><?php _e( 'View Features', 'erident-custom-login-and-dashboard' ); ?></a>
 					</div>
 				</li>
 			</ul>
