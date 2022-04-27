@@ -110,7 +110,7 @@ return function () {
 					</div>
 				</li>
 				<li class="heatbox">
-					<a href="https://wordpress.org/themes/ultimate-dashboard/" target="_blank">
+					<a href="https://wordpress.org/themes/page-builder-framework/" target="_blank">
 						<img src="<?php echo esc_url( CUSTOM_LOGIN_DASHBOARD_PLUGIN_URL ); ?>/assets/images/page-builder-framework.jpg">
 					</a>
 					<div class="heatbox-content">
