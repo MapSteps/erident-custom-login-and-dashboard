@@ -21,7 +21,7 @@ return function ( $settings ) {
 
   <div class="heatbox login-bg-settings-box">
 		<h2>
-			<?php _e( 'Logo Settings', 'erident-custom-login-and-dashboard' ); ?>
+			<?php _e( 'Page Logo Settings', 'erident-custom-login-and-dashboard' ); ?>
 		</h2>
 		<div class="setting-fields">
 

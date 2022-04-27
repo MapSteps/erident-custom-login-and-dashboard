@@ -76,8 +76,11 @@ return function () {
 							$login_bg_settings_box = require_once __DIR__ . '/setting-boxes/login-bg-settings.php';
 							$login_bg_settings_box( $settings );
 
-							$login_form_settings_box = require_once __DIR__ . '/setting-boxes/login-form-settings.php';
-							$login_form_settings_box( $settings );
+							$login_form_layout_settings_box = require_once __DIR__ . '/setting-boxes/login-form-layout-settings.php';
+							$login_form_layout_settings_box( $settings );
+
+							$login_form_bg_settings_box = require_once __DIR__ . '/setting-boxes/login-form-bg-settings.php';
+							$login_form_bg_settings_box( $settings );
 							?>
 						</div>
 
