@@ -19,6 +19,10 @@ return function ( $settings ) {
 	$border_width  = isset( $settings['dashboard_border_thick'] ) && ! empty( $settings['dashboard_border_thick'] ) ? $settings['dashboard_border_thick'] : '';
 	$border_style  = isset( $settings['dashboard_login_border'] ) && ! empty( $settings['dashboard_login_border'] ) ? $settings['dashboard_login_border'] : '';
 	$border_color  = isset( $settings['dashboard_border_color'] ) && ! empty( $settings['dashboard_border_color'] ) ? $settings['dashboard_border_color'] : '';
+
+	$enable_shadow = isset( $settings['dashboard_check_form_shadow'] ) ? $settings['dashboard_check_form_shadow'] : 0;
+	$enable_shadow = 'yes' === strtolower( $enable_shadow ) ? 1 : 0;
+	$shadow_color  = isset( $settings['dashboard_form_shadow'] ) && ! empty( $settings['dashboard_form_shadow'] ) ? $settings['dashboard_form_shadow'] : '';
 	?>
 
 	<div class="heatbox dashboard-settings-box">
@@ -138,6 +142,29 @@ return function ( $settings ) {
 			</div>
 
 			<hr>
+
+			<div class="field">
+				<label for="dashboard_check_form_shadow" class="label checkbox-label">
+					<?php _e( 'Enable form shadow', 'erident-custom-login-and-dashboard' ); ?>
+					<input type="checkbox" name="dashboard_check_form_shadow" id="dashboard_check_form_shadow" value="1" class="general-setting-field" <?php checked( $enable_shadow, 1 ); ?>>
+					<div class="indicator"></div>
+				</label>
+			</div>
+
+			<div class="field is-horizontal" data-show-if-field-checked="dashboard_check_form_shadow">
+				<div class="field-label">
+					<label for="dashboard_form_shadow" class="label">
+						<?php _e( 'Shadow Color', 'erident-custom-login-and-dashboard' ); ?>
+					</label>
+				</div>
+				<div class="field-body">
+					<div class="field">
+						<div class="control">
+							<input type="text" name="dashboard_form_shadow" id="dashboard_form_shadow" value="<?php echo esc_attr( $shadow_color ); ?>" class="color-picker-field general-setting-field" data-alpha="true" data-default-color="<?php echo esc_attr( $shadow_color ); ?>">
+						</div>
+					</div>
+				</div>
+			</div>
 
 		</div>
 	</div>

@@ -104,7 +104,7 @@ class Setup {
 	 */
 	public function add_submenu_page() {
 
-		$page = add_options_page( __( 'Custom Login and Dashboard', 'erident-custom-login-and-dashboard' ), __( 'Custom Login and Dashboard', 'erident-custom-login-and-dashboard' ), 'administrator', 'erident-custom-login-and-dashboard', [ $this, 'page_output' ] );
+		$page = add_options_page( __( 'Custom Login & Dashboard', 'erident-custom-login-and-dashboard' ), __( 'Custom Login & Dashboard', 'erident-custom-login-and-dashboard' ), 'administrator', 'erident-custom-login-and-dashboard', [ $this, 'page_output' ] );
 
 	}
 
