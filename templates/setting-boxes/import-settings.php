@@ -9,7 +9,7 @@ defined( 'ABSPATH' ) || die( "Can't access directly" );
 ?>
 
 <div class="heatbox import-widgets-box">
-	<form method="post" action="<?php menu_page_url( 'erident-custom-login-and-dashboard', true ); ?>" enctype="multipart/form-data">
+	<form method="post" action="<?php menu_page_url( 'erident-custom-login-and-dashboard', true ); ?>#tools" enctype="multipart/form-data">
 		<input type="hidden" name="er_action" value="import_settings">
 		<?php wp_nonce_field( 'er_import_nonce', 'er_import_nonce' ); ?>
 
