@@ -75,25 +75,31 @@ return function () {
 
 							$login_bg_settings_box = require_once __DIR__ . '/setting-boxes/login-bg-settings.php';
 							$login_bg_settings_box( $settings );
+							?>
 
-							$login_form_layout_settings_box = require_once __DIR__ . '/setting-boxes/login-form-layout-settings.php';
-							$login_form_layout_settings_box( $settings );
+							<div class="heatbox-group">
+								<?php
+								$login_form_layout_settings_box = require_once __DIR__ . '/setting-boxes/login-form-layout-settings.php';
+								$login_form_layout_settings_box( $settings );
 
-							$login_form_bg_settings_box = require_once __DIR__ . '/setting-boxes/login-form-bg-settings.php';
-							$login_form_bg_settings_box( $settings );
+								$login_form_bg_settings_box = require_once __DIR__ . '/setting-boxes/login-form-bg-settings.php';
+								$login_form_bg_settings_box( $settings );
 
-							$login_form_label_settings_box = require_once __DIR__ . '/setting-boxes/login-form-label-settings.php';
-							$login_form_label_settings_box( $settings );
+								$login_form_label_settings_box = require_once __DIR__ . '/setting-boxes/login-form-label-settings.php';
+								$login_form_label_settings_box( $settings );
 
-							$login_form_input_settings_box = require_once __DIR__ . '/setting-boxes/login-form-input-settings.php';
-							$login_form_input_settings_box( $settings );
+								$login_form_input_settings_box = require_once __DIR__ . '/setting-boxes/login-form-input-settings.php';
+								$login_form_input_settings_box( $settings );
 
-							$login_form_button_settings_box = require_once __DIR__ . '/setting-boxes/login-form-button-settings.php';
-							$login_form_button_settings_box( $settings );
+								$login_form_button_settings_box = require_once __DIR__ . '/setting-boxes/login-form-button-settings.php';
+								$login_form_button_settings_box( $settings );
 
-							$login_form_link_settings_box = require_once __DIR__ . '/setting-boxes/login-form-link-settings.php';
-							$login_form_link_settings_box( $settings );
+								$login_form_link_settings_box = require_once __DIR__ . '/setting-boxes/login-form-link-settings.php';
+								$login_form_link_settings_box( $settings );
+								?>
+							</div>
 
+							<?php
 							$login_footer_link_settings_box = require_once __DIR__ . '/setting-boxes/login-footer-link-settings.php';
 							$login_footer_link_settings_box( $settings );
 							?>

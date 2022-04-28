@@ -35,23 +35,13 @@
   flex-wrap: wrap;
 }
 
-.swift-control-settings .heatbox-main {
-  width: 55%;
+.heatbox-group .heatbox:not(:first-child) {
+  margin-top: -20px;
 }
 
-.swift-control-settings .heatbox-sidebar {
-  width: 43%;
-}
-
-.swift-control-settings .heatbox-sidebar .widget-item {
-  margin-top: 8px;
-}
-
-.swift-control-settings
-  .heatbox-sidebar
-  .widget-items
-  .widget-item:first-child {
-  margin-top: 0;
+.heatbox-group .heatbox:not(:first-child) h2 {
+  background-color: #f7f7f7;
+  border-top-width: 0;
 }
 
 /**
