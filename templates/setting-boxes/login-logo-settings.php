@@ -91,7 +91,7 @@ return function ( $settings ) {
 					<label for="dashboard_power_text" class="label">
 						<?php _e( 'Logo Text', 'erident-custom-login-and-dashboard' ); ?>
 						<p class="description">
-							Will be shown on logo hover.
+							Tuned out, this is not a hint text man. Try to inspect it in login page. The same applies for UDB.
 						</p>
 					</label>
 				</div>
