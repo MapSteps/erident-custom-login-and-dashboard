@@ -33,7 +33,7 @@ class Save_Settings {
 			wp_send_json_error( __( 'Invalid token', 'erident-custom-login-and-dashboard' ), 401 );
 		}
 
-		$available_fields = cldashboard_get_available_fields();
+		$available_fields = cldashboard_get_field_data_types();
 
 		$raw_post_data = $_POST;
 		$post_data     = [];
