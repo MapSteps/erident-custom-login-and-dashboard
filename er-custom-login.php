@@ -25,6 +25,7 @@ load_plugin_textdomain( 'erident-custom-login-and-dashboard', false, basename( d
 require __DIR__ . '/helpers/helpers.php';
 require __DIR__ . '/class-setup.php';
 require __DIR__ . '/ajax/class-save-settings.php';
+require __DIR__ . '/ajax/class-reset-settings.php';
 require __DIR__ . '/class-output.php';
 
 /**

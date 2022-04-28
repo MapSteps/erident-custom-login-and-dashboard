@@ -119,6 +119,32 @@ hr {
 
 /**
  * --------------------------------------------------
+ * Form Footer
+ * --------------------------------------------------
+ */
+.cldashboard-form-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.cldashboard-submit-area,
+.cldashboard-reset-area {
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+
+.cldashboard-submit-area {
+  justify-content: flex-start;
+}
+
+.cldashboard-reset-area {
+  justify-content: flex-end;
+}
+
+/**
+ * --------------------------------------------------
  * Button
  * --------------------------------------------------
  */
@@ -128,13 +154,13 @@ hr {
   justify-content: center;
 }
 
-.cldashboard-button.is-loading {
+.button.cldashboard-button.is-loading {
   justify-content: center;
   color: transparent !important;
   pointer-events: none;
 }
 
-.cldashboard-button.is-loading::after {
+.button.cldashboard-button.is-loading::after {
   content: "";
   position: absolute;
   width: 1em;
@@ -147,16 +173,20 @@ hr {
   animation: loadingSpinAround 0.5s infinite linear;
 }
 
-.cldashboard-reset-button {
+.button.cldashboard-submit-button {
+  margin-right: 10px;
+}
+
+.button.cldashboard-reset-button {
   margin-left: 10px;
   color: #fff;
   background-color: tomato;
   border-color: tomato;
 }
 
-.cldashboard-reset-button:hover,
-.cldashboard-reset-button:active,
-.cldashboard-reset-button:focus {
+.button.cldashboard-reset-button:hover,
+.button.cldashboard-reset-button:active,
+.button.cldashboard-reset-button:focus {
   color: #fff;
   background-color: #f5492a;
   border-color: #f5492a;
@@ -164,6 +194,32 @@ hr {
 
 .cldashboard-reset-button:focus {
   box-shadow: 0 0 0 1px #fff, 0 0 0 3px #f5492a;
+}
+
+/**
+ * --------------------------------------------------
+ * Notice
+ * --------------------------------------------------
+ */
+.cldashboard-notice {
+  font-weight: 500;
+  opacity: 0;
+  visibility: hidden;
+  transition: 350ms all linear;
+}
+
+.cldashboard-notice.is-shown {
+  opacity: 1;
+  visibility: visible;
+  transition: 350ms all linear;
+}
+
+.cldashboard-notice.is-success {
+  color: rgb(28, 129, 28);
+}
+
+.cldashboard-notice.is-error {
+  color: tomato;
 }
 
 /**

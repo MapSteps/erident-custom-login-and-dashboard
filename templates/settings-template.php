@@ -99,7 +99,20 @@ return function () {
 							?>
 						</div>
 
-						<?php submit_button( '', 'button button-primary button-larger' ); ?>
+						<div class="cldashboard-form-footer">
+							<div class="cldashboard-submit-area">
+								<button type="submit" class="button button-primary button-larger cldashboard-submit-button">
+									<?php esc_html_e( 'Save All Settings', 'erident-custom-login-and-dashboard' ); ?>
+								</button>
+								<span class="cldashboard-notice cldashboard-submit-notice"></span>
+							</div>
+							<div class="cldashboard-reset-area">
+								<span class="cldashboard-notice cldashboard-reset-notice"></span>
+								<button type="button" class="button button-larger cldashboard-reset-button">
+									<?php esc_html_e( 'Reset All', 'erident-custom-login-and-dashboard' ); ?>
+								</button>
+							</div>
+						</div>
 					</form>
 
 					<div class="heatbox-admin-panel cldashboard-tools-panel">

@@ -30,7 +30,7 @@ class Save_Settings {
 		$nonce = isset( $_POST['nonce'] ) ? $_POST['nonce'] : '';
 
 		if ( ! wp_verify_nonce( $nonce, 'cldashboard_nonce_save_settings' ) ) {
-			wp_send_json_error( __( 'Invalid token', 'ultimatedashboard' ), 401 );
+			wp_send_json_error( __( 'Invalid token', 'erident-custom-login-and-dashboard' ), 401 );
 		}
 
 		$available_fields = cldashboard_get_available_fields();
@@ -74,7 +74,7 @@ class Save_Settings {
 		 */
 		update_option( 'plugin_erident_settings', $post_data );
 
-		wp_send_json_success( __( 'Settings saved successfully', 'ultimatedashboard' ) );
+		wp_send_json_success( __( 'Settings have been saved', 'erident-custom-login-and-dashboard' ) );
 	}
 
 }

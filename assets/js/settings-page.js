@@ -8,14 +8,14 @@
   /**
    * The settings form.
    *
-   * @param HTMLElement form The form element.
+   * @var HTMLElement
    */
   var form = document.querySelector(".cldashboard-settings-form");
 
   /**
-   * The settings form.
+   * The setting fields.
    *
-   * @param HTMLElement form The form element.
+   * @var NodeList
    */
   var fields = document.querySelectorAll(
     ".cldashboard-settings-form .general-setting-field"
@@ -24,9 +24,30 @@
   /**
    * The submit button.
    *
-   * @param HTMLElement form The form element.
+   * @var HTMLElement
    */
-  var submitButton = document.querySelector("#submit");
+  var submitButton = document.querySelector(".cldashboard-submit-button");
+
+  /**
+   * The reset button.
+   *
+   * @var HTMLElement
+   */
+  var resetButton = document.querySelector(".cldashboard-reset-button");
+
+  /**
+   * The submit notice div.
+   *
+   * @var HTMLElement
+   */
+  var submitNotice = document.querySelector(".cldashboard-submit-notice");
+
+  /**
+   * The reset notice div.
+   *
+   * @var HTMLElement
+   */
+  var resetNotice = document.querySelector(".cldashboard-reset-notice");
 
   /**
    * Whether or not the form is currently being submitted.
@@ -53,9 +74,11 @@
 
     setupChainingFields();
 
-    if (form & submitButton) {
-      submitButton.classList.add("cldashboard-button");
-      form.addEventListener("submit", onSubmit);
+    if (form) form.addEventListener("submit", onSubmit);
+    if (submitButton) submitButton.classList.add("cldashboard-button");
+    if (resetButton) {
+      resetButton.classList.add("cldashboard-button");
+      resetButton.addEventListener("click", onReset);
     }
   }
 
@@ -287,12 +310,12 @@
     }
   }
 
-  function startLoading() {
-    if (submitButton) submitButton.classList.add("is-loading");
+  function startLoading(button) {
+    if (button) button.classList.add("is-loading");
   }
 
-  function stopLoading() {
-    if (submitButton) submitButton.classList.remove("is-loading");
+  function stopLoading(button) {
+    if (button) button.classList.remove("is-loading");
   }
 
   /**
@@ -304,14 +327,14 @@
     e.preventDefault();
     if (isProcessing) return;
     isProcessing = true;
-    startLoading();
+    startLoading(submitButton);
 
     var data = {};
 
     [].slice.call(fields).forEach(function (field) {
       var value = false;
 
-      if (field.tagName.toLoweCase() === "select") {
+      if (field.tagName.toLowerCase() === "select") {
         if (field.multiple) {
           value = JSON.stringify($(field).val());
         } else {
@@ -344,6 +367,9 @@
     })
       .done(function (r) {
         if (!r || !r.success) return;
+        submitNotice.classList.add("is-success");
+        submitNotice.classList.remove("is-error");
+        submitNotice.innerHTML = r.data;
       })
       .fail(function (jqXHR) {
         var errorMesssage = "Something went wrong";
@@ -351,10 +377,69 @@
         if (jqXHR.responseJSON && jqXHR.responseJSON.data) {
           errorMesssage = jqXHR.responseJSON.data;
         }
+
+        submitNotice.classList.remove("is-success");
+        submitNotice.classList.add("is-error");
+        submitNotice.innerHTML = errorMesssage;
       })
       .always(function () {
+        submitNotice.classList.add("is-shown");
         isProcessing = false;
-        stopLoading();
+        stopLoading(submitButton);
+
+        setTimeout(function () {
+          submitNotice.classList.remove("is-shown");
+        }, 3000);
+      });
+  }
+
+  /**
+   * Function to run on reset button press.
+   *
+   * @param Event e The event object.
+   */
+  function onReset(e) {
+    e.preventDefault();
+    if (!confirm(CustomLoginDashboard.dialogs.resetConfirmation)) return;
+    if (isProcessing) return;
+    isProcessing = true;
+    startLoading(resetButton);
+
+    var data = {};
+
+    data.action = "cldashboard_reset_settings";
+    data.nonce = CustomLoginDashboard.nonces.resetSettings;
+
+    $.ajax({
+      url: ajaxurl,
+      type: "POST",
+      data: data,
+    })
+      .done(function (r) {
+        if (!r || !r.success) return;
+        resetNotice.classList.add("is-success");
+        resetNotice.classList.remove("is-error");
+        resetNotice.innerHTML = r.data;
+      })
+      .fail(function (jqXHR) {
+        var errorMesssage = "Something went wrong";
+
+        if (jqXHR.responseJSON && jqXHR.responseJSON.data) {
+          errorMesssage = jqXHR.responseJSON.data;
+        }
+
+        resetNotice.classList.remove("is-success");
+        resetNotice.classList.add("is-error");
+        resetNotice.innerHTML = errorMesssage;
+      })
+      .always(function () {
+        resetNotice.classList.add("is-shown");
+        isProcessing = false;
+        stopLoading(resetButton);
+
+        setTimeout(function () {
+          resetNotice.classList.remove("is-shown");
+        }, 3000);
       });
   }
 

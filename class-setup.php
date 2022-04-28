@@ -63,6 +63,7 @@ class Setup {
 
 		// Ajax handlers.
 		new Ajax\Save_Settings();
+		new Ajax\Reset_Settings();
 
 	}
 
@@ -169,8 +170,12 @@ class Setup {
 			'custom-login-dashboard',
 			'CustomLoginDashboard',
 			array(
-				'nonces' => array(
-					'saveSettings' => wp_create_nonce( 'cldashboard_nonce_save_settings' ),
+				'nonces'  => array(
+					'saveSettings'  => wp_create_nonce( 'cldashboard_nonce_save_settings' ),
+					'resetSettings' => wp_create_nonce( 'cldashboard_nonce_reset_settings' ),
+				),
+				'dialogs' => array(
+					'resetConfirmation' => __( 'Are you sure you want to reset all settings?', 'erident-custom-login-and-dashboard' ),
 				),
 			)
 		);
