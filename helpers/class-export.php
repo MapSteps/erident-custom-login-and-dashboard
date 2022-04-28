@@ -21,7 +21,7 @@ class Export {
 	 */
 	public function export() {
 
-		$settings = get_option( 'plugin_erident_settings' );
+		$settings = get_option( 'plugin_erident_settings', [] );
 
 		ignore_user_abort( true );
 
