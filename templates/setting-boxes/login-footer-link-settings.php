@@ -15,10 +15,12 @@ defined( 'ABSPATH' ) || die( "Can't access directly" );
 return function ( $settings ) {
 
 	$remove_register_link = isset( $settings['dashboard_check_lost_pass'] ) ? $settings['dashboard_check_lost_pass'] : 0;
-	$remove_register_link = 'yes' === strtolower( $remove_register_link ) ? 1 : 0;
+	$remove_register_link = 'yes' === strtolower( $remove_register_link ) ? 1 : $remove_register_link;
+	$remove_register_link = 'no' === strtolower( $remove_register_link ) ? 0 : $remove_register_link;
 
 	$remove_back_to_blog_link = isset( $settings['dashboard_check_backtoblog'] ) ? $settings['dashboard_check_backtoblog'] : 0;
-	$remove_back_to_blog_link = 'yes' === strtolower( $remove_back_to_blog_link ) ? 1 : 0;
+	$remove_back_to_blog_link = 'yes' === strtolower( $remove_back_to_blog_link ) ? 1 : $remove_back_to_blog_link;
+	$remove_back_to_blog_link = 'no' === strtolower( $remove_back_to_blog_link ) ? 0 : $remove_back_to_blog_link;
 	?>
 
 	<div class="heatbox dashboard-settings-box">

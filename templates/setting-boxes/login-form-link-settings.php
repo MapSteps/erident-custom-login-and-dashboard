@@ -16,7 +16,8 @@ return function ( $settings ) {
 
 	$link_color    = isset( $settings['dashboard_link_color'] ) && ! empty( $settings['dashboard_link_color'] ) ? $settings['dashboard_link_color'] : '';
 	$enable_shadow = isset( $settings['dashboard_check_shadow'] ) ? $settings['dashboard_check_shadow'] : 0;
-	$enable_shadow = 'yes' === strtolower( $enable_shadow ) ? 1 : 0;
+	$enable_shadow = 'yes' === strtolower( $enable_shadow ) ? 1 : $enable_shadow;
+	$enable_shadow = 'no' === strtolower( $enable_shadow ) ? 0 : $enable_shadow;
 	$shadow_color  = isset( $settings['dashboard_link_shadow'] ) && ! empty( $settings['dashboard_link_shadow'] ) ? $settings['dashboard_link_shadow'] : '';
 	?>
 

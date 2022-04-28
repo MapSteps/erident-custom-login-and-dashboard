@@ -16,6 +16,7 @@ return function ( $settings ) {
 
 	$logo_image_url = isset( $settings['dashboard_image_logo'] ) && ! empty( $settings['dashboard_image_logo'] ) ? $settings['dashboard_image_logo'] : '';
 	$logo_width     = isset( $settings['dashboard_image_logo_width'] ) && ! empty( $settings['dashboard_image_logo_width'] ) ? $settings['dashboard_image_logo_width'] : '';
+	$logo_height    = isset( $settings['dashboard_image_logo_height'] ) && ! empty( $settings['dashboard_image_logo_height'] ) ? $settings['dashboard_image_logo_height'] : '';
 	$logo_hint_text = isset( $settings['dashboard_power_text'] ) && ! empty( $settings['dashboard_power_text'] ) ? $settings['dashboard_power_text'] : '';
 	?>
 
@@ -78,7 +79,7 @@ return function ( $settings ) {
 				<div class="field-body">
 					<div class="field">
 						<div class="control">
-							<input type="number" name="dashboard_image_logo_height" id="dashboard_image_logo_height" value="<?php echo esc_attr( $logo_width ); ?>" class="general-setting-field is-tiny">
+							<input type="number" name="dashboard_image_logo_height" id="dashboard_image_logo_height" value="<?php echo esc_attr( $logo_height ); ?>" class="general-setting-field is-tiny">
 							<code>px</code>
 						</div>
 					</div>

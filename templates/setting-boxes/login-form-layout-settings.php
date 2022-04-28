@@ -21,7 +21,8 @@ return function ( $settings ) {
 	$border_color  = isset( $settings['dashboard_border_color'] ) && ! empty( $settings['dashboard_border_color'] ) ? $settings['dashboard_border_color'] : '';
 
 	$enable_shadow = isset( $settings['dashboard_check_form_shadow'] ) ? $settings['dashboard_check_form_shadow'] : 0;
-	$enable_shadow = 'yes' === strtolower( $enable_shadow ) ? 1 : 0;
+	$enable_shadow = 'yes' === strtolower( $enable_shadow ) ? 1 : $enable_shadow;
+	$enable_shadow = 'no' === strtolower( $enable_shadow ) ? 0 : $enable_shadow;
 	$shadow_color  = isset( $settings['dashboard_form_shadow'] ) && ! empty( $settings['dashboard_form_shadow'] ) ? $settings['dashboard_form_shadow'] : '';
 	?>
 
