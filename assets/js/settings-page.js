@@ -107,9 +107,11 @@
       var hashValue = link.href.substring(link.href.indexOf("#") + 1);
 
       if ("tools" === hashValue) {
-        $(".cldashboard-settings-form .submit").hide();
+        submitButton.classList.add("is-hidden");
+        resetButton.classList.add("is-hidden");
       } else {
-        $(".cldashboard-settings-form .submit").show();
+        submitButton.classList.remove("is-hidden");
+        resetButton.classList.remove("is-hidden");
       }
 
       $(".heatbox-form-container .heatbox-admin-panel").css("display", "none");
@@ -135,9 +137,11 @@
       }
 
       if ("tools" === hashValue) {
-        $(".cldashboard-settings-form .submit").hide();
+        submitButton.classList.add("is-hidden");
+        resetButton.classList.add("is-hidden");
       } else {
-        $(".cldashboard-settings-form .submit").show();
+        submitButton.classList.remove("is-hidden");
+        resetButton.classList.remove("is-hidden");
       }
 
       $(".heatbox-tab-nav-item").removeClass("active");

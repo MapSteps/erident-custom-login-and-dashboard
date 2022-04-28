@@ -154,6 +154,10 @@ hr {
   justify-content: center;
 }
 
+.button.cldashboard-button.is-hidden {
+  display: none;
+}
+
 .button.cldashboard-button.is-loading {
   justify-content: center;
   color: transparent !important;
