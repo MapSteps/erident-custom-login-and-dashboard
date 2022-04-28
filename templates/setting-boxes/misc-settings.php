@@ -15,7 +15,8 @@ defined( 'ABSPATH' ) || die( "Can't access directly" );
 return function ( $settings ) {
 
 	$clean_deactivation = isset( $settings['dashboard_delete_db'] ) ? $settings['dashboard_delete_db'] : 0;
-	$clean_deactivation = 'yes' === strtolower( $clean_deactivation ) ? 1 : 0;
+	$clean_deactivation = 'yes' === strtolower( $clean_deactivation ) ? 1 : $clean_deactivation;
+	$clean_deactivation = 'no' === strtolower( $clean_deactivation ) ? 0 : $clean_deactivation;
 	?>
 
 	<div class="heatbox misc-settings-box">

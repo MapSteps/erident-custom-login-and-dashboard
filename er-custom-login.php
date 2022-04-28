@@ -52,7 +52,11 @@ function cldashboard_deactivation_script() {
 
 	$settings = get_option( 'plugin_erident_settings', [] );
 
-	if ( isset( $settings['dashboard_delete_db'] ) && 'Yes' === $settings['dashboard_delete_db'] ) {
+	$clean_deactivation = isset( $settings['dashboard_delete_db'] ) ? $settings['dashboard_delete_db'] : 0;
+	$clean_deactivation = 'yes' === strtolower( $clean_deactivation ) ? 1 : $clean_deactivation;
+	$clean_deactivation = 'no' === strtolower( $clean_deactivation ) ? 0 : $clean_deactivation;
+
+	if ( $clean_deactivation ) {
 		delete_option( 'plugin_erident_settings' );
 	}
 
