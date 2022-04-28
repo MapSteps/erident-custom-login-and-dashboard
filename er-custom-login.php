@@ -21,6 +21,9 @@ define( 'CUSTOM_LOGIN_DASHBOARD_PLUGIN_VERSION', '3.5.9' );
 
 load_plugin_textdomain( 'erident-custom-login-and-dashboard', false, basename( dirname( __FILE__ ) ) . '/languages/' );
 
+// Composer
+require __DIR__ . '/vendor/autoload.php';
+
 // Helper classes.
 require __DIR__ . '/helpers/helpers.php';
 require __DIR__ . '/helpers/class-export.php';
