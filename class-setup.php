@@ -143,10 +143,6 @@ class Setup {
 
 		// CSS dependencies.
 
-		// Farbtastic color picker.
-		// TODO: Let's replace this with WP color picker.
-		wp_enqueue_style( 'farbtastic', CUSTOM_LOGIN_DASHBOARD_PLUGIN_URL . '/assets/farbtastic/farbtastic.css', array(), '1.2' );
-
 		// WP Color picker dependency.
 		wp_enqueue_style( 'wp-color-picker' );
 
@@ -158,13 +154,11 @@ class Setup {
 
 		// JS dependencies.
 
-		wp_enqueue_script( 'farbtastic', array( 'jquery' ) );
-
 		// Color picker alpha.
 		wp_enqueue_script( 'wp-color-picker-alpha', CUSTOM_LOGIN_DASHBOARD_PLUGIN_URL . '/assets/js/wp-color-picker-alpha.js', array( 'jquery', 'wp-color-picker', 'wp-i18n' ), '2.1.3', true );
 
 		// Settings page scripts.
-		wp_enqueue_script( 'custom-login-dashboard', CUSTOM_LOGIN_DASHBOARD_PLUGIN_URL . '/assets/js/settings-page.js', array( 'wp-color-picker', 'farbtastic' ), CUSTOM_LOGIN_DASHBOARD_PLUGIN_VERSION, true );
+		wp_enqueue_script( 'custom-login-dashboard', CUSTOM_LOGIN_DASHBOARD_PLUGIN_URL . '/assets/js/settings-page.js', array( 'wp-color-picker' ), CUSTOM_LOGIN_DASHBOARD_PLUGIN_VERSION, true );
 
 		wp_localize_script(
 			'custom-login-dashboard',
