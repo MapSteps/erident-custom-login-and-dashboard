@@ -131,11 +131,11 @@ class Output {
 
 		if ( isset( $settings['dashboard_login_bg_opacity'] ) ) {
 			// This `dashboard_login_bg_opacity` won't be used anymore since we use colorpicker alpha now.
-			$login_default_opacity = '' !== $settings['dashboard_login_bg_opacity'] ? $settings['dashboard_login_bg_opacity'] : 1; // 0 is allowed here.
+			$login_bg_opacity = '' !== $settings['dashboard_login_bg_opacity'] ? $settings['dashboard_login_bg_opacity'] : 1; // 0 is allowed here.
 
-			if ( false === stripos( $login_bg_color, 'rgba' ) && 1 > $login_default_opacity ) {
+			if ( false === stripos( $login_bg_color, 'rgba' ) && 1 > $login_bg_opacity ) {
 				$login_bg_color = ariColor::newColor( $login_bg_color );
-				$login_bg_color = $login_bg_color->getNew( 'alpha', $login_default_opacity )->toCSS( 'rgba' );
+				$login_bg_color = $login_bg_color->getNew( 'alpha', $login_bg_opacity )->toCSS( 'rgba' );
 			}
 		}
 
@@ -165,7 +165,7 @@ class Output {
 				width:<?php echo $settings['dashboard_login_width']; ?>px;
 			}
 
-			.login form {
+			#loginform {
 				border-radius:<?php echo $settings['dashboard_login_radius']; ?>px !important;
 				border:<?php echo $settings['dashboard_border_thick']; ?>px <?php echo $settings['dashboard_login_border']; ?> <?php echo $settings['dashboard_border_color']; ?> !important;
 				background: <?php echo esc_html( $login_bg_color ); ?> url(<?php echo $settings['login_bg_image']; ?>) <?php echo $settings['login_bg_repeat']; ?> <?php echo $settings['login_bg_xpos']; ?> <?php echo $settings['login_bg_ypos']; ?> !important;
