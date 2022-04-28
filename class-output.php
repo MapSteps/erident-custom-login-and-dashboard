@@ -7,6 +7,8 @@
 
 namespace CustomLoginDashboard;
 
+use ariColor;
+
 /**
  * Setup Better Admin Bar output.
  */
@@ -123,14 +125,20 @@ class Output {
 			$login_backtoblog = 'none';
 		}
 
-		$login_default_opacity = $settings['dashboard_login_bg_opacity'];
+		$btn_hover_color = ariColor::newColor( $settings['dashboard_button_color'] );
+		$btn_hover_color = $btn_hover_color->getNew( 'alpha', 0.9 )->toCSS( 'rgba' );
+		$login_bg_color  = $settings['dashboard_login_bg'];
 
-		if ( '' === $settings['dashboard_login_bg_opacity'] ) {
-			$login_default_opacity = '1';
+		if ( isset( $settings['dashboard_login_bg_opacity'] ) ) {
+			// This `dashboard_login_bg_opacity` won't be used anymore since we use colorpicker alpha now.
+			$login_default_opacity = '' !== $settings['dashboard_login_bg_opacity'] ? $settings['dashboard_login_bg_opacity'] : 1; // 0 is allowed here.
+
+			if ( false === stripos( $login_bg_color, 'rgba' ) && 1 > $login_default_opacity ) {
+				$login_bg_color = ariColor::newColor( $login_bg_color );
+				$login_bg_color = $login_bg_color->getNew( 'alpha', $login_default_opacity )->toCSS( 'rgba' );
+			}
 		}
 
-		$btn_rgba = cldashboard_hex2rgb( $settings['dashboard_button_color'] );
-		$login_bg = cldashboard_hex2rgb( $settings['dashboard_login_bg'] );
 		?>
 
 		<style type="text/css">
@@ -160,7 +168,7 @@ class Output {
 			.login form {
 				border-radius:<?php echo $settings['dashboard_login_radius']; ?>px !important;
 				border:<?php echo $settings['dashboard_border_thick']; ?>px <?php echo $settings['dashboard_login_border']; ?> <?php echo $settings['dashboard_border_color']; ?> !important;
-				background:rgba(<?php echo $login_bg['red']; ?>,<?php echo $login_bg['green']; ?>,<?php echo $login_bg['blue']; ?>,<?php echo $login_default_opacity; ?>) url(<?php echo $settings['login_bg_image']; ?>) <?php echo $settings['login_bg_repeat']; ?> <?php echo $settings['login_bg_xpos']; ?> <?php echo $settings['login_bg_ypos']; ?> !important;
+				background: <?php echo esc_html( $login_bg_color ); ?> url(<?php echo $settings['login_bg_image']; ?>) <?php echo $settings['login_bg_repeat']; ?> <?php echo $settings['login_bg_xpos']; ?> <?php echo $settings['login_bg_ypos']; ?> !important;
 				-moz-box-shadow:    <?php echo $login_form_shadow; ?> !important;
 				-webkit-box-shadow: <?php echo $login_form_shadow; ?> !important;
 				box-shadow:         <?php echo $login_form_shadow; ?> !important;
@@ -178,8 +186,10 @@ class Output {
 				text-shadow: <?php echo $login_link_shadow; ?> !important;
 			}
 
-			body.login #loginform p.submit .button-primary:hover, body.login #loginform p.submit .button-primary:focus, body.wp-core-ui .button-primary:hover {
-				background: rgba(<?php echo $btn_rgba['red']; ?>,<?php echo $btn_rgba['green']; ?>,<?php echo $btn_rgba['blue']; ?>, 0.9) !important;
+			body.login #loginform p.submit .button-primary:hover,
+			body.login #loginform p.submit .button-primary:focus,
+			body.wp-core-ui .button-primary:hover {
+				background: <?php echo esc_html( $btn_hover_color ); ?> !important;
 			}
 
 			body.login div#login form .input, .login input[type="text"] {

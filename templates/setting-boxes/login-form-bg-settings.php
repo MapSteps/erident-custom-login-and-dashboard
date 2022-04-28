@@ -15,11 +15,20 @@ defined( 'ABSPATH' ) || die( "Can't access directly" );
 return function ( $settings ) {
 
 	$bg_color       = isset( $settings['dashboard_login_bg'] ) && ! empty( $settings['dashboard_login_bg'] ) ? $settings['dashboard_login_bg'] : '';
-	$bg_opacity     = isset( $settings['dashboard_login_bg_opacity'] ) ? $settings['dashboard_login_bg_opacity'] : 1; // 0 is allowed here.
 	$bg_image_url   = isset( $settings['login_bg_image'] ) && ! empty( $settings['login_bg_image'] ) ? $settings['login_bg_image'] : '';
 	$bg_repeat      = isset( $settings['login_bg_repeat'] ) && ! empty( $settings['login_bg_repeat'] ) ? $settings['login_bg_repeat'] : '';
 	$horizontal_pos = isset( $settings['login_bg_xpos'] ) && ! empty( $settings['login_bg_xpos'] ) ? $settings['login_bg_xpos'] : '';
 	$vertical_pos   = isset( $settings['login_bg_ypos'] ) && ! empty( $settings['login_bg_ypos'] ) ? $settings['login_bg_ypos'] : '';
+
+	if ( isset( $settings['dashboard_login_bg_opacity'] ) ) {
+		// This `dashboard_login_bg_opacity` won't be used anymore since we use colorpicker alpha now.
+		$bg_opacity = '' !== $settings['dashboard_login_bg_opacity'] ? $settings['dashboard_login_bg_opacity'] : 1; // 0 is allowed here.
+
+		if ( false === stripos( $bg_color, 'rgba' ) && 1 > $bg_opacity ) {
+			$bg_color = ariColor::newColor( $bg_color );
+			$bg_color = $bg_color->getNew( 'alpha', $bg_opacity )->toCSS( 'rgba' );
+		}
+	}
 	?>
 
 	<div class="heatbox dashboard-settings-box">
@@ -41,25 +50,6 @@ return function ( $settings ) {
 					<div class="field">
 						<div class="control">
 							<input type="text" name="dashboard_login_bg" id="dashboard_login_bg" value="<?php echo esc_attr( $bg_color ); ?>" class="color-picker-field general-setting-field" data-alpha="true" data-default-color="<?php echo esc_attr( $bg_color ); ?>">
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="field is-horizontal">
-				<div class="field-label">
-					<label for="dashboard_login_bg_opacity" class="label">
-						<?php _e( 'Background Opacity', 'erident-custom-login-and-dashboard' ); ?>
-						<p class="description">
-							The form background transparency.
-							<a href="https://wordpress.org/plugins/erident-custom-login-and-dashboard/#faq" target="_blank">More info</a>
-						</p>
-					</label>
-				</div>
-				<div class="field-body">
-					<div class="field">
-						<div class="control">
-							<input type="number" min="0" max="1" step="0.1" name="dashboard_login_bg_opacity" id="dashboard_login_bg_opacity" value="<?php echo esc_attr( $bg_opacity ); ?>" class="general-setting-field is-tiny">
 						</div>
 					</div>
 				</div>
