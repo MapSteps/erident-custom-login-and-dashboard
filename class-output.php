@@ -101,25 +101,25 @@ class Output {
 
 		$login_link_shadow = 'none';
 
-		if ( 'Yes' === $settings['dashboard_check_shadow'] ) {
+		if ( 'Yes' === $settings['dashboard_check_shadow'] || ( isset( $settings['dashboard_check_shadow'] ) && 'No' !== $settings['dashboard_check_shadow'] ) ) {
 			$login_link_shadow = $settings['dashboard_link_shadow'] . ' 0 1px 0';
 		}
 
 		$login_form_shadow = 'none';
 
-		if ( 'Yes' === $settings['dashboard_check_form_shadow'] ) {
+		if ( 'Yes' === $settings['dashboard_check_form_shadow'] || ( isset( $settings['dashboard_check_form_shadow'] ) && 'No' !== $settings['dashboard_check_form_shadow'] ) ) {
 			$login_form_shadow = '0 4px 10px -1px ' . $settings['dashboard_form_shadow'];
 		}
 
 		$login_lost_pass = 'block';
 
-		if ( 'Yes' === $settings['dashboard_check_lost_pass'] ) {
+		if ( 'Yes' === $settings['dashboard_check_lost_pass'] || ( isset( $settings['dashboard_check_lost_pass'] ) && 'No' !== $settings['dashboard_check_lost_pass'] ) ) {
 			$login_lost_pass = 'none';
 		}
 
 		$login_backtoblog = 'block';
 
-		if ( 'Yes' === $settings['dashboard_check_backtoblog'] ) {
+		if ( 'Yes' === $settings['dashboard_check_backtoblog'] || ( isset( $settings['dashboard_check_backtoblog'] ) && 'No' !== $settings['dashboard_check_backtoblog'] ) ) {
 			$login_backtoblog = 'none';
 		}
 
