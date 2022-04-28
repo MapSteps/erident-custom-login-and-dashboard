@@ -26,7 +26,7 @@ return function ( $settings ) {
 		</h2>
 		<div class="setting-fields">
 
-			<div class="field is-horizontal" data-show-if-field-checked="dashboard_check_shadow">
+			<div class="field is-horizontal">
 				<div class="field-label">
 					<label for="dashboard_link_color" class="label">
 						<?php _e( 'Link Color', 'erident-custom-login-and-dashboard' ); ?>
@@ -41,12 +41,21 @@ return function ( $settings ) {
 				</div>
 			</div>
 
-			<div class="field">
-				<label for="dashboard_check_shadow" class="label checkbox-label">
-					<?php _e( 'Enable link shadow', 'erident-custom-login-and-dashboard' ); ?>
-					<input type="checkbox" name="dashboard_check_shadow" id="dashboard_check_shadow" value="1" class="general-setting-field" <?php checked( $enable_shadow, 1 ); ?>>
-					<div class="indicator"></div>
-				</label>
+			<div class="field is-horizontal">
+				<div class="field-label">
+					<label for="dashboard_check_shadow" class="label">
+						<?php _e( 'Link Text Shadow', 'erident-custom-login-and-dashboard' ); ?>
+					</label>
+				</div>
+				<div class="field-body">
+					<div class="field">
+						<label for="dashboard_check_shadow" class="label checkbox-label">
+							<?php _e( 'Enable', 'erident-custom-login-and-dashboard' ); ?>
+							<input type="checkbox" name="dashboard_check_shadow" id="dashboard_check_shadow" value="1" class="general-setting-field" <?php checked( $enable_shadow, 1 ); ?>>
+							<div class="indicator"></div>
+						</label>
+					</div>
+				</div>
 			</div>
 
 			<div class="field is-horizontal" data-show-if-field-checked="dashboard_check_shadow">

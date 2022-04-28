@@ -143,12 +143,21 @@ return function ( $settings ) {
 
 			<hr>
 
-			<div class="field">
-				<label for="dashboard_check_form_shadow" class="label checkbox-label">
-					<?php _e( 'Enable form shadow', 'erident-custom-login-and-dashboard' ); ?>
-					<input type="checkbox" name="dashboard_check_form_shadow" id="dashboard_check_form_shadow" value="1" class="general-setting-field" <?php checked( $enable_shadow, 1 ); ?>>
-					<div class="indicator"></div>
-				</label>
+			<div class="field is-horizontal">
+				<div class="field-label">
+					<label for="dashboard_check_form_shadow" class="label">
+						Form Box Shadow
+					</label>
+				</div>
+				<div class="field-body">
+					<div class="field">
+						<label for="dashboard_check_form_shadow" class="label checkbox-label">
+							<?php _e( 'Enable', 'erident-custom-login-and-dashboard' ); ?>
+							<input type="checkbox" name="dashboard_check_form_shadow" id="dashboard_check_form_shadow" value="1" class="general-setting-field" <?php checked( $enable_shadow, 1 ); ?>>
+							<div class="indicator"></div>
+						</label>
+					</div>
+				</div>
 			</div>
 
 			<div class="field is-horizontal" data-show-if-field-checked="dashboard_check_form_shadow">
