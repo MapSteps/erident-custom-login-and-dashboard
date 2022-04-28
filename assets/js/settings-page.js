@@ -421,6 +421,7 @@
     })
       .done(function (r) {
         if (!r || !r.success) return;
+        resetForm();
         resetNotice.classList.add("is-success");
         resetNotice.classList.remove("is-error");
         resetNotice.innerHTML = r.data;
@@ -443,8 +444,37 @@
 
         setTimeout(function () {
           resetNotice.classList.remove("is-shown");
+          resetNotice.innerHTML = "";
         }, 3000);
       });
+  }
+
+  /**
+   * Reset the settings form.
+   */
+  function resetForm() {
+    // This line alone doesn't reset the form :).
+    form.reset();
+
+    [].slice.call(fields).forEach(function (field) {
+      if (field.tagName.toLowerCase() === "select") {
+        if (field.multiple) {
+          $(field).val([]);
+        } else {
+          field.selectedIndex = 0;
+        }
+      } else {
+        if (field.type === "checkbox" || field.type === "radio") {
+          field.checked = false;
+        } else {
+          field.value = "";
+        }
+      }
+    });
+
+    // Reset the color picker.
+    // @link https://github.com/Automattic/Iris/issues/53
+    $(".color-alpha").css("background-color", "");
   }
 
   // Run the module.
