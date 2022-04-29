@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || die( "Can't access directly" );
 		<p class="description">
 			<?php _e( 'Do you enjoy <strong>Erident Custom Login and Dashboard</strong>? Help us spread the word and leave a review in the official WordPress repository.', 'erident-custom-login-and-dashboard' ); ?>
 		</p>
-		<a href="https://wordpress.org/plugins/erident-custom-login-and-dashboard/reviews/#new-post" target="_blank" class="button">
+		<a href="https://wordpress.org/support/plugin/erident-custom-login-and-dashboard/reviews/#new-post" target="_blank" class="button">
 			<?php _e( 'Sure, you deserve it!', 'erident-custom-login-and-dashboard' ); ?>
 		</a>
 	</div>
