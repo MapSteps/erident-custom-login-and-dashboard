@@ -126,7 +126,6 @@ return function ( $settings ) {
 	}
 
 	body.login div#login h1 a {
-		padding-bottom: 30px;
 		margin: 0 auto;
 
 		<?php if ( ! empty( $logo_image ) ) : ?>
