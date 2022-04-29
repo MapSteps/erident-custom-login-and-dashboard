@@ -3,7 +3,7 @@ Contributors: davidvongries, libinvbabu
 Tags: login, customisation, admin, dashboard, customise, erident, custom login, form, logo, customize, branding, login customizer, CSS, admin login, white label, login background, custom login page
 Requires at least: 3.0.0
 Tested up to: 5.9
-Stable tag: 3.5.9
+Stable tag: 4.0
 Requires PHP: 5.6
 License: GPL-3.0 License
 License URI: https://oss.ninja/gpl-3.0?organization=David%20Vongries&project=Erident%20Custom%20Login%20and%20Dashboard
@@ -11,9 +11,9 @@ License URI: https://oss.ninja/gpl-3.0?organization=David%20Vongries&project=Eri
 Fully customize the WordPress Login Screen.
 
 == Description ==
-**Erident Custom Login and Dashboard** is the #1 rated plugin to customize the WordPress Login Screen.
+**Erident Custom Login and Dashboard** is the #1 rated Plugin to customize the WordPress Login Screen. It's a clean & minimalist way for you to fully customize almost all aspects of the WordPress Login Page.
 
-Create a custom WordPress login page with just a few clicks! All the settings to customize the WordPress login are located under Settings -> Custom Login & Dashboard.
+Create a custom WordPress login page with just a few clicks! All the settings to customize the WordPress login are located under Settings > Custom Login & Dashboard.
 
 Are you looking for a way to fully customize your WordPress admin area? Check out our **[Ultimate Dashboard](https://ultimatedashboard.io/?utm_source=erident&utm_medium=repository&utm_campaign=udb)** Plugin.
 
