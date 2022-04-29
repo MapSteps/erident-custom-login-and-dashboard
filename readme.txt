@@ -3,7 +3,7 @@ Contributors: davidvongries, libinvbabu
 Tags: login, customisation, admin, dashboard, customise, erident, custom login, form, logo, customize, branding, login customizer, CSS, admin login, white label, login background, custom login page
 Requires at least: 3.0.0
 Tested up to: 5.9
-Stable tag: 4.0
+Stable tag: 4.0.1
 Requires PHP: 5.6
 License: GPL-3.0 License
 License URI: https://oss.ninja/gpl-3.0?organization=David%20Vongries&project=Erident%20Custom%20Login%20and%20Dashboard
@@ -54,6 +54,11 @@ Yes! For more options and to fully customize the WordPress dashboard, check out 
 4. Customized WordPress Login Screen (Example 2)
 
 == Changelog ==
+= 4.0.1 | April 29, 2022 =
+* Tweak: Added sidebar layout
+* Fixed: "Load Default Settings" button appeared on Tools page
+* Fixed: Some settings were not mobile responsive
+
 = 4.0 | April 29, 2022 =
 * Version 4.0 is a complete refactor of Erident Custom Login & Dashboard with a modern look and a much improved user experience. For even more options, check out **[Ultimate Dashboard](https://ultimatedashboard.io/?utm_source=erident&utm_medium=changelog&utm_campaign=udb)**.
 
