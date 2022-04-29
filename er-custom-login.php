@@ -1,17 +1,17 @@
 <?php
-/*
-Plugin Name: Erident Custom Login and Dashboard
-Plugin URI: https://ultimatedashboard.io/
-Description: Fully customize the WordPress Login Screen.
-Text Domain: erident-custom-login-and-dashboard
-Domain Path: /languages
-Version: 4.0
-Author: David Vongries
-Author URI: https://davidvongries.com/
-License: GPL-3.0
+/**
+ * Plugin Name: Erident Custom Login and Dashboard
+ * Plugin URI: https://ultimatedashboard.io/
+ * Description: Fully customize the WordPress Login Screen.
+ * Text Domain: erident-custom-login-and-dashboard
+ * Domain Path: /languages
+ * Version: 4.0
+ * Author: David Vongries
+ * Author URI: https://davidvongries.com/
+ * License: GPL-3.0
 
-@package Custom_Login_Dashboard
-*/
+ * @package Custom_Login_Dashboard
+ */
 
 // Helper constants.
 define( 'CUSTOM_LOGIN_DASHBOARD_PLUGIN_DIR', rtrim( plugin_dir_path( __FILE__ ), '/' ) );
