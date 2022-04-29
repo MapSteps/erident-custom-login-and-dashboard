@@ -56,12 +56,8 @@ class Output {
 		// Left side of the admin area's footer text.
 		add_filter( 'admin_footer_text', [ $this, 'left_footer_text' ] );
 
-		$footer_right_text = $this->right_footer_text();
-
 		// Right side of the admin area's footer text.
-		if ( ! empty( $footer_right_text ) ) {
-			add_filter( 'update_footer', [ $this, 'right_footer_text' ], 11 );
-		}
+		add_filter( 'update_footer', [ $this, 'right_footer_text' ], 11 );
 
 		add_action( 'login_head', [ $this, 'print_login_styles' ] );
 
@@ -86,12 +82,14 @@ class Output {
 	}
 
 	/**
-	 * Get the right side texr of the admin area's footer.
+	 * Filters the version/update text displayed in the admin footer.
+	 *
+	 * @param string $content The content that will be printed.
 	 */
-	public function right_footer_text() {
+	public function right_footer_text( $content ) {
 
 		$settings = get_option( 'plugin_erident_settings', [] );
-		$text     = isset( $settings['dashboard_data_right'] ) ? $settings['dashboard_data_right'] : '';
+		$text     = isset( $settings['dashboard_data_right'] ) && ! empty( $settings['dashboard_data_right'] ) ? $settings['dashboard_data_right'] : $content;
 
 		return stripslashes( $text );
 
@@ -134,9 +132,9 @@ class Output {
 	public function login_logo_title( $headertext ) {
 
 		$settings   = get_option( 'plugin_erident_settings' );
-		$logo_title = isset( $settings['dashboard_power_text'] ) ? $settings['dashboard_power_text'] : '';
+		$logo_title = isset( $settings['dashboard_power_text'] ) && ! empty( $settings['dashboard_power_text'] ) ? $settings['dashboard_power_text'] : $headertext;
 
-		return ( ! empty( $logo_title ) ? $logo_title : $headertext );
+		return $logo_title;
 
 	}
 
