@@ -40,7 +40,11 @@ require __DIR__ . '/class-output.php';
  */
 function cldashboard_activation_script() {
 
-	update_option( 'plugin_erident_settings', cldashboard_get_field_default_values() );
+	$settings = get_option( 'plugin_erident_settings', [] );
+
+	if ( empty( $settings ) ) {
+		update_option( 'plugin_erident_settings', cldashboard_get_field_default_values() );
+	}
 
 }
 register_activation_hook( __FILE__, 'cldashboard_activation_script' );
