@@ -117,6 +117,9 @@ return function () {
 								<button type="button" class="button button-larger cldashboard-reset-button">
 									<?php esc_html_e( 'Reset All', 'erident-custom-login-and-dashboard' ); ?>
 								</button>
+								<button type="button" class="button button-larger cldashboard-load-defaults-button">
+									<?php esc_html_e( 'Load Default Values', 'erident-custom-login-and-dashboard' ); ?>
+								</button>
 							</div>
 						</div>
 					</form>

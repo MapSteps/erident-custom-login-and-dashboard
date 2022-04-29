@@ -29,10 +29,13 @@ require __DIR__ . '/helpers/helpers.php';
 require __DIR__ . '/helpers/class-export.php';
 require __DIR__ . '/helpers/class-import.php';
 
-// Required classes.
-require __DIR__ . '/class-setup.php';
+// Ajax handler classes.
 require __DIR__ . '/ajax/class-save-settings.php';
 require __DIR__ . '/ajax/class-reset-settings.php';
+require __DIR__ . '/ajax/class-load-default-settings.php';
+
+// Required classes.
+require __DIR__ . '/class-setup.php';
 require __DIR__ . '/class-output.php';
 
 /**

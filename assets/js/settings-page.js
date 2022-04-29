@@ -36,6 +36,15 @@
   var resetButton = document.querySelector(".cldashboard-reset-button");
 
   /**
+   * The load default values button.
+   *
+   * @var HTMLElement
+   */
+  var loadDefaultSettingsButton = document.querySelector(
+    ".cldashboard-load-defaults-button"
+  );
+
+  /**
    * The submit notice div.
    *
    * @var HTMLElement
@@ -76,9 +85,18 @@
 
     if (form) form.addEventListener("submit", onSubmit);
     if (submitButton) submitButton.classList.add("cldashboard-button");
+
     if (resetButton) {
       resetButton.classList.add("cldashboard-button");
       resetButton.addEventListener("click", onReset);
+    }
+
+    if (loadDefaultSettingsButton) {
+      loadDefaultSettingsButton.classList.add("cldashboard-button");
+      loadDefaultSettingsButton.addEventListener(
+        "click",
+        onLoadDefaultSettings
+      );
     }
   }
 
@@ -404,7 +422,8 @@
    */
   function onReset(e) {
     e.preventDefault();
-    if (!confirm(CustomLoginDashboard.dialogs.resetConfirmation)) return;
+    if (!confirm(CustomLoginDashboard.dialogs.resetSettingsConfirmation))
+      return;
     if (isProcessing) return;
     isProcessing = true;
     startLoading(resetButton);
@@ -475,6 +494,99 @@
     // Reset the color picker.
     // @link https://github.com/Automattic/Iris/issues/53
     $(".color-alpha").css("background-color", "");
+  }
+
+  /**
+   * Function to run on load defaults button press.
+   *
+   * @param Event e The event object.
+   */
+  function onLoadDefaultSettings(e) {
+    e.preventDefault();
+    if (!confirm(CustomLoginDashboard.dialogs.loadDefaultSettingsConfirmation))
+      return;
+    if (isProcessing) return;
+    isProcessing = true;
+    startLoading(loadDefaultSettingsButton);
+
+    var data = {};
+
+    data.action = "cldashboard_load_default_settings";
+    data.nonce = CustomLoginDashboard.nonces.loadDefaultSettings;
+
+    $.ajax({
+      url: ajaxurl,
+      type: "POST",
+      data: data,
+    })
+      .done(function (r) {
+        if (!r || !r.success) return;
+        populateForm(r.data.settings);
+        resetNotice.classList.add("is-success");
+        resetNotice.classList.remove("is-error");
+        resetNotice.innerHTML = r.data.message;
+      })
+      .fail(function (jqXHR) {
+        var errorMesssage = "Something went wrong";
+
+        if (jqXHR.responseJSON && jqXHR.responseJSON.data) {
+          errorMesssage = jqXHR.responseJSON.data;
+        }
+
+        resetNotice.classList.remove("is-success");
+        resetNotice.classList.add("is-error");
+        resetNotice.innerHTML = errorMesssage;
+      })
+      .always(function () {
+        resetNotice.classList.add("is-shown");
+        isProcessing = false;
+        stopLoading(loadDefaultSettingsButton);
+
+        setTimeout(function () {
+          resetNotice.classList.remove("is-shown");
+          resetNotice.innerHTML = "";
+        }, 3000);
+      });
+  }
+
+  function populateForm(settings) {
+    var value;
+    var field;
+    var colorPickerPreview;
+
+    for (var fieldName in settings) {
+      if (Object.hasOwnProperty.call(settings, fieldName)) {
+        value = settings[fieldName];
+        field = document.getElementById(fieldName);
+
+        if (field) {
+          if (field.tagName.toLowerCase() === "select") {
+            if (field.multiple) {
+              $(field).val(value);
+            } else {
+              field.value = value;
+            }
+          } else if (field.type === "checkbox" || field.type === "radio") {
+            field.checked = value ? true : false;
+          } else {
+            field.value = value;
+
+            if (field.classList.contains("color-picker-field")) {
+              $(field).wpColorPicker("color", value);
+
+              colorPickerPreview =
+                field.parentNode.parentNode.parentNode.querySelector(
+                  ".color-alpha"
+                );
+
+              if (colorPickerPreview) {
+                colorPickerPreview.style.backgroundColor = value;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 
   // Run the module.
