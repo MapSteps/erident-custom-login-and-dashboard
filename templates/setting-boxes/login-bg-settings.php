@@ -24,7 +24,7 @@ return function ( $settings ) {
 
 	<div class="heatbox login-bg-settings-box">
 		<h2>
-			<?php _e( 'Page Background Settings', 'erident-custom-login-and-dashboard' ); ?>
+			<?php _e( 'Background Settings', 'erident-custom-login-and-dashboard' ); ?>
 		</h2>
 		<div class="setting-fields">
 
@@ -47,9 +47,6 @@ return function ( $settings ) {
 				<div class="field-label">
 					<label for="top_bg_image" class="label">
 						<?php _e( 'Background Image URL', 'erident-custom-login-and-dashboard' ); ?>
-						<p class="description">
-							Leave blank if you don't need background image.
-						</p>
 					</label>
 				</div>
 				<div class="field-body">
@@ -99,9 +96,7 @@ return function ( $settings ) {
 					<label for="top_bg_xpos" class="label">
 						<?php _e( 'Background Horizontal Position', 'erident-custom-login-and-dashboard' ); ?>
 						<p class="description">
-							The horizontal position of the background image. Possible value: <code>left</code>, or <code>center</code>, or <code>right</code>, or numeric value.
-							If you use numeric value, you can use <code>px</code>, or <code>em</code>, or <code>%</code>, or other unit as the suffix.
-							<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-position-x" target="_blank">More info</a>
+							<?php _e( 'Possible values: <code>left</code>, <code>center</code>, <code>right</code> or numeric value. If a numeric value is provided, a unit (<code>px</code>, <code>%</code>, etc.) must be defined.', 'erident-custom-login-and-dashboard' ); ?>
 						</p>
 					</label>
 				</div>
@@ -119,9 +114,7 @@ return function ( $settings ) {
 					<label for="top_bg_ypos" class="label">
 						<?php _e( 'Background Vertical Position', 'erident-custom-login-and-dashboard' ); ?>
 						<p class="description">
-							The vertical position of the background image. Possible value: <code>top</code>, or <code>center</code>, or <code>bottom</code>, or numeric value.
-							If you use numeric value, you can use <code>px</code>, or <code>em</code>, or <code>%</code>, or other unit as the suffix.
-							<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-position-y" target="_blank">More info</a>
+							<?php _e( 'Possible values: <code>left</code>, <code>center</code>, <code>right</code> or numeric value. If a numeric value is provided, a unit (<code>px</code>, <code>%</code>, etc.) must be defined.', 'erident-custom-login-and-dashboard' ); ?>
 						</p>
 					</label>
 				</div>
@@ -139,9 +132,7 @@ return function ( $settings ) {
 					<label for="top_bg_size" class="label">
 						<?php _e( 'Background Size', 'erident-custom-login-and-dashboard' ); ?>
 						<p class="description">
-							Possible value: <code>auto</code>, or <code>length</code>, or <code>percentage</code>, or <code>cover</code>, or <code>contain</code> or numeric value.
-							If you use numeric value, you can use <code>px</code>, or <code>em</code>, or <code>%</code>, or other unit as the suffix.
-							<a href="https://developer.mozilla.org/id/docs/Web/CSS/background-size" target="_blank">More info</a>
+							<?php _e( 'Possible values: <code>auto</code>, <code>cover</code>, <code>contain</code> or numeric value. If a numeric value is provided, a unit (<code>px</code>, <code>%</code>, etc.) must be defined.', 'erident-custom-login-and-dashboard' ); ?>
 						</p>
 					</label>
 				</div>
