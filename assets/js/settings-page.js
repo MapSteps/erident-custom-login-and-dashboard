@@ -127,9 +127,11 @@
       if ("tools" === hashValue) {
         submitButton.classList.add("is-hidden");
         resetButton.classList.add("is-hidden");
+        loadDefaultSettingsButton.classList.add("is-hidden");
       } else {
         submitButton.classList.remove("is-hidden");
         resetButton.classList.remove("is-hidden");
+        loadDefaultSettingsButton.classList.remove("is-hidden");
       }
 
       $(".heatbox-form-container .heatbox-admin-panel").css("display", "none");
@@ -157,9 +159,11 @@
       if ("tools" === hashValue) {
         submitButton.classList.add("is-hidden");
         resetButton.classList.add("is-hidden");
+        loadDefaultSettingsButton.classList.add("is-hidden");
       } else {
         submitButton.classList.remove("is-hidden");
         resetButton.classList.remove("is-hidden");
+        loadDefaultSettingsButton.classList.remove("is-hidden");
       }
 
       $(".heatbox-tab-nav-item").removeClass("active");

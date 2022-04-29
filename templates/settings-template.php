@@ -52,9 +52,11 @@ return function () {
 
 		</div>
 
-		<div class="heatbox-container heatbox-container-center heatbox-form-container">
+		<div class="heatbox-container heatbox-container-center heatbox-column-container heatbox-form-container">
 
-			<h1 style="display: none;"></h1>
+			<div class="heatbox-main">
+
+				<h1 style="display: none;"></h1>
 
 				<div>
 					<form method="post" action="options.php" class="cldashboard-settings-form">
@@ -135,6 +137,17 @@ return function () {
 						</div>
 					</div>
 				</div>
+
+			</div>
+
+			<div class="heatbox-sidebar">
+
+				<?php
+				require __DIR__ . '/setting-boxes/recommended.php';
+				require __DIR__ . '/setting-boxes/review.php';
+				?>
+
+			</div>
 
 			<div class="heatbox-divider"></div>
 
