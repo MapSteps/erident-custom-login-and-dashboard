@@ -71,12 +71,15 @@ class Output {
 	}
 
 	/**
-	 * Filter the left side text of the admin area's footer.
+	 * Filters the “Thank you” text displayed in the admin footer.
+	 *
+	 * @param string $text The existing footer text.
+	 * @return string The modified footer text.
 	 */
-	public function left_footer_text() {
+	public function left_footer_text( $text ) {
 
 		$settings = get_option( 'plugin_erident_settings', [] );
-		$text     = isset( $settings['dashboard_data_left'] ) ? $settings['dashboard_data_left'] : '';
+		$text     = isset( $settings['dashboard_data_left'] ) && ! empty( $settings['dashboard_data_left'] ) ? $settings['dashboard_data_left'] : $text;
 
 		return stripslashes( $text );
 
