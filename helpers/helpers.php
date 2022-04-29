@@ -68,7 +68,7 @@ function cldashboard_get_field_default_values() {
 		'dashboard_login_width'       => '350',
 		'dashboard_login_radius'      => '4',
 		'dashboard_login_border'      => 'solid',
-		'dashboard_border_thick'      => '4',
+		'dashboard_border_thick'      => '2',
 		'dashboard_border_color'      => '#dddddd',
 		'dashboard_login_bg'          => '#ffffff',
 		'dashboard_login_bg_opacity'  => '1', // Deprecated.
