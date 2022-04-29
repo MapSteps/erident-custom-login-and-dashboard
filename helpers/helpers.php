@@ -65,7 +65,7 @@ function cldashboard_get_field_default_values() {
 		'dashboard_image_logo_width'  => '80',
 		'dashboard_image_logo_height' => '80',
 		'dashboard_power_text'        => 'Powered by Your Website',
-		'dashboard_login_width'       => '350',
+		'dashboard_login_width'       => '320',
 		'dashboard_login_radius'      => '4',
 		'dashboard_login_border'      => 'solid',
 		'dashboard_border_thick'      => '2',
