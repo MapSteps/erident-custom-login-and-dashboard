@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) || die( "Can't access directly" );
 		<h2><?php _e( 'Import', 'erident-custom-login-and-dashboard' ); ?></h2>
 		<div class="heatbox-content">
 			<p>
-				<?php _e( 'Import the plugin settings from a .json file. This file can be obtained by exporting the settings from another site using the export form.', 'erident-custom-login-and-dashboard' ); ?>
+				<?php _e( 'Select the .json file you would like to import.', 'erident-custom-login-and-dashboard' ); ?>
 			</p>
 			<div class="setting-fields is-gapless">
 				<div class="fields-wrapper">
@@ -24,7 +24,7 @@ defined( 'ABSPATH' ) || die( "Can't access directly" );
 					<input type="file" name="import_file" id="import_file">
 				</div>
 			</div>
-			<?php submit_button( __( 'Import File', 'erident-custom-login-and-dashboard' ), 'primary', 'submit_import' ); ?>
+			<?php submit_button( __( 'Import Settings', 'erident-custom-login-and-dashboard' ), 'primary', 'submit_import' ); ?>
 		</div>
 	</form>
 </div>

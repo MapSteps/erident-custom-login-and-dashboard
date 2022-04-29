@@ -27,10 +27,7 @@ return function ( $settings ) {
 			<div class="field is-horizontal">
 				<div class="field-label">
 					<label for="dashboard_data_left" class="label">
-						Left side footer text
-						<p class="description">
-							This will replace the default "Thank you for creating with WordPress" on the footer left side of admin area.
-						</p>
+						<?php _e( 'Footer Text', 'erident-custom-login-and-dashboard' ); ?>
 					</label>
 				</div>
 				<div class="field-body">
@@ -45,10 +42,7 @@ return function ( $settings ) {
 			<div class="field is-horizontal">
 				<div class="field-label">
 					<label for="dashboard_data_right" class="label">
-						Right side footer text
-						<p class="description">
-							This will replace the default "WordPress Version" on the footer right side of admin area.
-						</p>
+						<?php _e( 'Version Text', 'erident-custom-login-and-dashboard' ); ?>
 					</label>
 				</div>
 				<div class="field-body">

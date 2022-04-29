@@ -27,9 +27,9 @@ return function ( $settings ) {
 
 			<div class="field">
 				<label for="dashboard_delete_db" class="label checkbox-label">
-					<?php _e( 'Remove custom settings upon plugin deactivation', 'erident-custom-login-and-dashboard' ); ?>
+					<?php _e( 'Remove data on uninstall', 'erident-custom-login-and-dashboard' ); ?>
 					<p class="description">
-						If checked, all custom settings will be removed from database upon plugin deactivation.
+						<?php _e( 'If checked, all data will be removed on plugin deactivation.', 'erident-custom-login-and-dashboard' ); ?>
 					</p>
 					<input type="checkbox" name="dashboard_delete_db" id="dashboard_delete_db" value="1" class="general-setting-field" <?php checked( $clean_deactivation, 1 ); ?>>
 					<div class="indicator"></div>

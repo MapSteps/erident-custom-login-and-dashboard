@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) || die( "Can't access directly" );
 		<h2><?php _e( 'Export', 'erident-custom-login-and-dashboard' ); ?></h2>
 		<div class="heatbox-content">
 			<p>
-				<?php _e( 'Export the plugin settings for this site as a .json file. This allows you to easily import the configuration into another site.', 'erident-custom-login-and-dashboard' ); ?>
+				<?php _e( 'Generate & export a .json file to backup your settings or move them to a different WordPress install.', 'erident-custom-login-and-dashboard' ); ?>
 			</p>
 			<?php submit_button( __( 'Export Settings', 'erident-custom-login-and-dashboard' ), 'primary', 'submit_export' ); ?>
 		</div>

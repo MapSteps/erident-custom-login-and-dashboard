@@ -22,17 +22,14 @@ return function ( $settings ) {
 
   <div class="heatbox login-bg-settings-box">
 		<h2>
-			<?php _e( 'Page Logo Settings', 'erident-custom-login-and-dashboard' ); ?>
+			<?php _e( 'Logo Settings', 'erident-custom-login-and-dashboard' ); ?>
 		</h2>
 		<div class="setting-fields">
 
 			<div class="field is-horizontal">
 				<div class="field-label">
 					<label for="dashboard_image_logo" class="label">
-						<?php _e( 'Logo Image URL', 'erident-custom-login-and-dashboard' ); ?>
-						<p class="description">
-							Leave blank if you don't need to change the logo.
-						</p>
+						<?php _e( 'Logo URL', 'erident-custom-login-and-dashboard' ); ?>
 					</label>
 				</div>
 				<div class="field-body">
@@ -40,7 +37,7 @@ return function ( $settings ) {
 						<div class="control">
 							<input type="text" id="dashboard_image_logo" name="dashboard_image_logo" value="<?php echo esc_url( $logo_image_url ); ?>" class="general-setting-field is-small cldashboard-logo-image-field">
 							<button type="button" class="button-secondary cldashboard-upload-button">
-								<?php _e( 'Add Logo Image', 'erident-custom-login-and-dashboard' ); ?>
+								<?php _e( 'Add Logo', 'erident-custom-login-and-dashboard' ); ?>
 							</button>
 							<button type="button" class="button-secondary cldashboard-clear-button">x</button>
 						</div>
@@ -52,9 +49,6 @@ return function ( $settings ) {
 				<div class="field-label">
 					<label for="dashboard_image_logo_width" class="label">
 						<?php _e( 'Logo Width', 'erident-custom-login-and-dashboard' ); ?>
-						<p class="description">
-							The logo width in pixel.
-						</p>
 					</label>
 				</div>
 				<div class="field-body">
@@ -71,9 +65,6 @@ return function ( $settings ) {
 				<div class="field-label">
 					<label for="dashboard_image_logo_height" class="label">
 						<?php _e( 'Logo Height', 'erident-custom-login-and-dashboard' ); ?>
-						<p class="description">
-							The logo height in pixel.
-						</p>
 					</label>
 				</div>
 				<div class="field-body">
@@ -89,10 +80,7 @@ return function ( $settings ) {
 			<div class="field is-horizontal">
 				<div class="field-label">
 					<label for="dashboard_power_text" class="label">
-						<?php _e( 'Logo Text', 'erident-custom-login-and-dashboard' ); ?>
-						<p class="description">
-							Tuned out, this is not a hint text man. Try to inspect it in login page. The same applies for UDB.
-						</p>
+						<?php _e( 'Logo Title', 'erident-custom-login-and-dashboard' ); ?>
 					</label>
 				</div>
 				<div class="field-body">

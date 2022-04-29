@@ -25,7 +25,7 @@ return function () {
 							<?php _e( 'Custom Login & Dashboard', 'erident-custom-login-and-dashboard' ); ?>
 							<span class="version"><?php echo esc_html( CUSTOM_LOGIN_DASHBOARD_PLUGIN_VERSION ); ?></span>
 						</span>
-						<p class="subtitle"><?php _e( 'Top rated plugin for Login Page Customization!', 'erident-custom-login-and-dashboard' ); ?></p>
+						<p class="subtitle"><?php _e( 'The #1 Plugin to customize the WordPress login screen.', 'erident-custom-login-and-dashboard' ); ?></p>
 					</div>
 
 					<div>
