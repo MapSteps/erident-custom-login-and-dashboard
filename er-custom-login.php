@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: Custom Login and Dashboard
+Plugin Name: Erident Custom Login and Dashboard
 Plugin URI: https://ultimatedashboard.io/
-Description: Customize completely your WordPress Login Screen and Dashboard. Add your company logo to login screen, change background colors, styles, button color etc. Customize your Dashboard footer text also for complete branding.
+Description: Fully customize the WordPress Login Screen.
 Text Domain: erident-custom-login-and-dashboard
 Domain Path: /languages
 Version: 4.0
