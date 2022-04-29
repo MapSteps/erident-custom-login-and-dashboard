@@ -171,8 +171,8 @@ class Setup {
 					'loadDefaultSettings' => wp_create_nonce( 'cldashboard_nonce_load_default_settings' ),
 				),
 				'dialogs' => array(
-					'resetSettingsConfirmation'       => __( 'Are you sure you want to reset all settings?', 'erident-custom-login-and-dashboard' ),
-					'loadDefaultSettingsConfirmation' => __( 'Are you sure you want to replace the current settings with default initial values?', 'erident-custom-login-and-dashboard' ),
+					'resetSettingsConfirmation'       => __( 'Are you sure you want to delete all settings?', 'erident-custom-login-and-dashboard' ),
+					'loadDefaultSettingsConfirmation' => __( 'Are you sure you want to reset all settings?', 'erident-custom-login-and-dashboard' ),
 				),
 			)
 		);

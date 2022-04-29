@@ -115,10 +115,10 @@ return function () {
 							<div class="cldashboard-reset-area">
 								<span class="cldashboard-notice cldashboard-reset-notice"></span>
 								<button type="button" class="button button-larger cldashboard-reset-button">
-									<?php esc_html_e( 'Reset All', 'erident-custom-login-and-dashboard' ); ?>
+									<?php esc_html_e( 'Reset Settings', 'erident-custom-login-and-dashboard' ); ?>
 								</button>
 								<button type="button" class="button button-larger cldashboard-load-defaults-button">
-									<?php esc_html_e( 'Load Default Values', 'erident-custom-login-and-dashboard' ); ?>
+									<?php esc_html_e( 'Load Default Settings', 'erident-custom-login-and-dashboard' ); ?>
 								</button>
 							</div>
 						</div>
