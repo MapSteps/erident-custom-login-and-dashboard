@@ -30,7 +30,7 @@ return function ( $settings ) {
 			<div class="field is-horizontal">
 				<div class="field-label">
 					<label for="dashboard_link_color" class="label">
-						<?php _e( 'Link Color', 'erident-custom-login-and-dashboard' ); ?>
+						<?php _e( 'Color', 'erident-custom-login-and-dashboard' ); ?>
 					</label>
 				</div>
 				<div class="field-body">
@@ -45,7 +45,7 @@ return function ( $settings ) {
 			<div class="field is-horizontal">
 				<div class="field-label">
 					<label for="dashboard_check_shadow" class="label">
-						<?php _e( 'Link Text Shadow', 'erident-custom-login-and-dashboard' ); ?>
+						<?php _e( 'Text Shadow', 'erident-custom-login-and-dashboard' ); ?>
 					</label>
 				</div>
 				<div class="field-body">
@@ -62,7 +62,7 @@ return function ( $settings ) {
 			<div class="field is-horizontal" data-show-if-field-checked="dashboard_check_shadow">
 				<div class="field-label">
 					<label for="dashboard_link_shadow" class="label">
-						<?php _e( 'Shadow Color', 'erident-custom-login-and-dashboard' ); ?>
+						<?php _e( 'Text Shadow Color', 'erident-custom-login-and-dashboard' ); ?>
 					</label>
 				</div>
 				<div class="field-body">

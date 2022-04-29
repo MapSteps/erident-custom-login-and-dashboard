@@ -31,7 +31,7 @@ return function ( $settings ) {
 
 			<div class="field">
 				<label for="dashboard_check_lost_pass" class="label checkbox-label">
-					<?php _e( 'Remove "Register | Lost your password" link', 'erident-custom-login-and-dashboard' ); ?>
+					<?php _e( 'Remove "Register | Lost your password?" link', 'erident-custom-login-and-dashboard' ); ?>
 					<input type="checkbox" name="dashboard_check_lost_pass" id="dashboard_check_lost_pass" value="1" class="general-setting-field" <?php checked( $remove_register_link, 1 ); ?>>
 					<div class="indicator"></div>
 				</label>
@@ -39,7 +39,7 @@ return function ( $settings ) {
 
 			<div class="field">
 				<label for="dashboard_check_backtoblog" class="label checkbox-label">
-					<?php _e( 'Remove "Back to your website" link', 'erident-custom-login-and-dashboard' ); ?>
+					<?php _e( 'Remove "Back to website" link', 'erident-custom-login-and-dashboard' ); ?>
 					<input type="checkbox" name="dashboard_check_backtoblog" id="dashboard_check_backtoblog" value="1" class="general-setting-field" <?php checked( $remove_back_to_blog_link, 1 ); ?>>
 					<div class="indicator"></div>
 				</label>

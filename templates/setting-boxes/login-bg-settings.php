@@ -43,6 +43,8 @@ return function ( $settings ) {
 				</div>
 			</div>
 
+			<hr>
+
 			<div class="field is-horizontal">
 				<div class="field-label">
 					<label for="top_bg_image" class="label">

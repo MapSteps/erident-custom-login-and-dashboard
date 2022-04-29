@@ -20,7 +20,7 @@ return function ( $settings ) {
 
 	<div class="heatbox dashboard-settings-box">
 		<h2>
-			<?php _e( 'Form Input Settings', 'erident-custom-login-and-dashboard' ); ?>
+			<?php _e( 'Form Input Field Settings', 'erident-custom-login-and-dashboard' ); ?>
 		</h2>
 		<div class="setting-fields">
 

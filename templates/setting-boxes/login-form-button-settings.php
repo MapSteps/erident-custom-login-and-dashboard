@@ -42,7 +42,7 @@ return function ( $settings ) {
 			<div class="field is-horizontal">
 				<div class="field-label">
 					<label for="dashboard_button_text_color" class="label">
-						<?php _e( 'Text Color', 'erident-custom-login-and-dashboard' ); ?>
+						<?php _e( 'Font Color', 'erident-custom-login-and-dashboard' ); ?>
 					</label>
 				</div>
 				<div class="field-body">

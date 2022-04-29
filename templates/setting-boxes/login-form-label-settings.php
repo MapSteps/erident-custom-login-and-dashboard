@@ -43,9 +43,6 @@ return function ( $settings ) {
 				<div class="field-label">
 					<label for="dashboard_label_text_size" class="label">
 						<?php _e( 'Font Size', 'erident-custom-login-and-dashboard' ); ?>
-						<p class="description">
-							The font size of username & password label in pixel.
-						</p>
 					</label>
 				</div>
 				<div class="field-body">

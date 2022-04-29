@@ -35,34 +35,14 @@ return function ( $settings ) {
 			<div class="field is-horizontal">
 				<div class="field-label">
 					<label for="dashboard_login_width" class="label">
-						Form Width
-						<p class="description">
-							The form width in pixel. Default to 350px.
-						</p>
+						<?php _e( 'Form Width', 'erident-custom-login-and-dashboard' ); ?>
 					</label>
 				</div>
 				<div class="field-body">
 					<div class="field">
 						<div class="control">
 							<input type="number" name="dashboard_login_width" id="dashboard_login_width" class="general-setting-field is-tiny" value="<?php echo esc_attr( $form_width ); ?>">
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="field is-horizontal">
-				<div class="field-label">
-					<label for="dashboard_login_radius" class="label">
-						Border Radius
-						<p class="description">
-							The form's border radius in pixel. This is the option to make the corners rounded.
-						</p>
-					</label>
-				</div>
-				<div class="field-body">
-					<div class="field">
-						<div class="control">
-							<input type="number" name="dashboard_login_radius" id="dashboard_login_radius" class="general-setting-field is-tiny" value="<?php echo esc_attr( $border_radius ); ?>">
+							<code>px</code>
 						</div>
 					</div>
 				</div>
@@ -72,18 +52,31 @@ return function ( $settings ) {
 
 			<div class="field is-horizontal">
 				<div class="field-label">
+					<label for="dashboard_login_radius" class="label">
+						<?php _e( 'Border Radius', 'erident-custom-login-and-dashboard' ); ?>
+					</label>
+				</div>
+				<div class="field-body">
+					<div class="field">
+						<div class="control">
+							<input type="number" name="dashboard_login_radius" id="dashboard_login_radius" class="general-setting-field is-tiny" value="<?php echo esc_attr( $border_radius ); ?>">
+							<code>px</code>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="field is-horizontal">
+				<div class="field-label">
 					<label for="dashboard_border_thick" class="label">
-						Border Width
-						<p class="description">
-							The form's border width in pixel.
-							<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-width" target="_blank">More info</a>
-						</p>
+						<?php _e( 'Border Width', 'erident-custom-login-and-dashboard' ); ?>
 					</label>
 				</div>
 				<div class="field-body">
 					<div class="field">
 						<div class="control">
 							<input type="number" name="dashboard_border_thick" id="dashboard_border_thick" class="general-setting-field is-tiny" value="<?php echo esc_attr( $border_width ); ?>">
+							<code>px</code>
 						</div>
 					</div>
 				</div>
@@ -93,10 +86,6 @@ return function ( $settings ) {
 				<div class="field-label">
 					<label for="dashboard_login_border" class="label">
 						<?php _e( 'Border Style', 'erident-custom-login-and-dashboard' ); ?>
-						<p class="description">
-							The form's border style.
-							<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-style" target="_blank">More info</a>
-						</p>
 					</label>
 				</div>
 				<div class="field-body">
@@ -127,10 +116,6 @@ return function ( $settings ) {
 				<div class="field-label">
 					<label for="dashboard_border_color" class="label">
 						<?php _e( 'Border Color', 'erident-custom-login-and-dashboard' ); ?>
-						<p class="description">
-							The form's border color.
-							<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-color" target="_blank">More info</a>
-						</p>
 					</label>
 				</div>
 				<div class="field-body">
@@ -147,7 +132,7 @@ return function ( $settings ) {
 			<div class="field is-horizontal">
 				<div class="field-label">
 					<label for="dashboard_check_form_shadow" class="label">
-						Form Box Shadow
+						<?php _e( 'Form Box Shadow', 'erident-custom-login-and-dashboard' ); ?>
 					</label>
 				</div>
 				<div class="field-body">
@@ -164,7 +149,7 @@ return function ( $settings ) {
 			<div class="field is-horizontal" data-show-if-field-checked="dashboard_check_form_shadow">
 				<div class="field-label">
 					<label for="dashboard_form_shadow" class="label">
-						<?php _e( 'Shadow Color', 'erident-custom-login-and-dashboard' ); ?>
+						<?php _e( 'Form Box Shadow Color', 'erident-custom-login-and-dashboard' ); ?>
 					</label>
 				</div>
 				<div class="field-body">
