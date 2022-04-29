@@ -19,6 +19,7 @@ Are you looking for a way to fully customize your WordPress admin area? Check ou
 
 === Features ===
 Here is a list of some of the features available in Erident Custom Login & Dashboard:
+
 * Add a custom Logo & Logo URL
 * Change the Login Page Background Color
 * Add a Background Image to your Login Screen
