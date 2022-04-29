@@ -124,13 +124,16 @@ class Output {
 
 	/**
 	 * Change login logo title.
+	 *
+	 * @param string $headertext The existing header text.
+	 * @return string
 	 */
-	public function login_logo_title() {
+	public function login_logo_title( $headertext ) {
 
 		$settings   = get_option( 'plugin_erident_settings' );
 		$logo_title = isset( $settings['dashboard_power_text'] ) ? $settings['dashboard_power_text'] : '';
 
-		return stripslashes( $logo_title );
+		return ( ! empty( $logo_title ) ? $logo_title : $headertext );
 
 	}
 
