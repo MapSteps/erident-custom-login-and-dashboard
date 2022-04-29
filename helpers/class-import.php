@@ -21,7 +21,8 @@ class Import {
 	 */
 	public function import() {
 
-		$extension = end( explode( '.', $_FILES['import_file']['name'] ) );
+		$explodes  = explode( '.', $_FILES['import_file']['name'] );
+		$extension = end( $explodes );
 
 		if ( 'json' !== $extension ) {
 			wp_die( __( 'Please upload a valid .json file' ) );
