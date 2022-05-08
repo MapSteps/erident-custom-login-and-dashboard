@@ -59,7 +59,7 @@ class Output {
 		// Right side of the admin area's footer text.
 		add_filter( 'update_footer', [ $this, 'right_footer_text' ], 11 );
 
-		add_action( 'login_head', [ $this, 'print_login_styles' ] );
+		add_action( 'login_head', [ $this, 'print_login_styles' ], 20 );
 
 		add_filter( 'login_headerurl', [ $this, 'login_logo_url' ] );
 		add_filter( 'login_headertext', [ $this, 'login_logo_title' ] );
