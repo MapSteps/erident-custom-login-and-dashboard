@@ -33,6 +33,7 @@ require __DIR__ . '/helpers/class-import.php';
 require __DIR__ . '/ajax/class-save-settings.php';
 require __DIR__ . '/ajax/class-reset-settings.php';
 require __DIR__ . '/ajax/class-load-default-settings.php';
+require __DIR__ . '/ajax/class-migration.php';
 
 // Required classes.
 require __DIR__ . '/class-setup.php';

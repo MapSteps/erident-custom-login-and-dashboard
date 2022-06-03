@@ -61,10 +61,15 @@ class Setup {
 		add_action( 'admin_init', array( $this, 'process_export' ) );
 		add_action( 'admin_init', array( $this, 'process_import' ) );
 
+		// Migration stuff.
+		add_action( 'admin_enqueue_scripts', array( $this, 'migration_notice_scripts' ) );
+		add_action( 'admin_notices', array( $this, 'migration_notice' ) );
+
 		// Ajax handlers.
 		new Ajax\Save_Settings();
 		new Ajax\Reset_Settings();
 		new Ajax\Load_Default_Settings();
+		new Ajax\Migration();
 
 	}
 
@@ -109,7 +114,7 @@ class Setup {
 	 */
 	public function add_submenu_page() {
 
-		$page = add_options_page( __( 'Custom Login & Dashboard', 'erident-custom-login-and-dashboard' ), __( 'Custom Login & Dashboard', 'erident-custom-login-and-dashboard' ), 'administrator', 'erident-custom-login-and-dashboard', [ $this, 'page_output' ] );
+		add_options_page( __( 'Custom Login & Dashboard', 'erident-custom-login-and-dashboard' ), __( 'Custom Login & Dashboard', 'erident-custom-login-and-dashboard' ), 'administrator', 'erident-custom-login-and-dashboard', [ $this, 'page_output' ] );
 
 	}
 
@@ -259,6 +264,125 @@ class Setup {
 		$importer = new Helpers\Import();
 
 		$importer->import();
+
+	}
+
+	/**
+	 * Enqueue the migration scripts.
+	 */
+	public function migration_notice_scripts() {
+
+		wp_enqueue_script('updates');
+
+		wp_enqueue_style( 'cldashboard-migration', CUSTOM_LOGIN_DASHBOARD_PLUGIN_URL . '/assets/css/migration.css', array(), CUSTOM_LOGIN_DASHBOARD_PLUGIN_VERSION );
+
+		wp_enqueue_script( 'cldashboard-migration', CUSTOM_LOGIN_DASHBOARD_PLUGIN_URL . '/assets/js/migration.js', array( 'jquery' ), CUSTOM_LOGIN_DASHBOARD_PLUGIN_VERSION, true );
+
+		$old_plugin_slug     = 'erident-custom-login-and-dashboard';
+		$old_plugin_basename = $old_plugin_slug . '/er-custom-login.php';
+
+		$new_plugin_slug     = 'ultimate-dashboard';
+		$new_plugin_basename = $new_plugin_slug . '/' . $new_plugin_slug . '.php';
+
+		$activation_url = add_query_arg(
+			array(
+				'action'        => 'activate',
+				'plugin'        => rawurlencode( $new_plugin_basename ),
+				'plugin_status' => 'all',
+				'paged'         => '1',
+				'_wpnonce'      => wp_create_nonce( 'activate-plugin_' . $new_plugin_basename ),
+			),
+			esc_url( network_admin_url( 'plugins.php' ) )
+		);
+
+		$js_objects = array(
+			'redirectUrl' => admin_url( 'options-general.php?page=better-admin-bar' ),
+			'oldPlugin'   => [
+				'slug'     => $old_plugin_slug,
+				'basename' => $old_plugin_basename,
+			],
+			'newPlugin'   => [
+				'slug'          => $new_plugin_slug,
+				'basename'      => $new_plugin_basename,
+				'activationUrl' => $activation_url,
+			],
+			'nonces'      => array(
+				'migration' => wp_create_nonce( 'cldashboard_nonce_migration' ),
+			),
+		);
+
+		wp_localize_script(
+			'cldashboard-migration',
+			'CldashboardMigration',
+			$js_objects
+		);
+
+	}
+
+	/**
+	 * Notice about migration to "Ultimate Dashboard".
+	 */
+	public function migration_notice() {
+
+		$current_user = wp_get_current_user();
+		?>
+
+		<div class="notice notice-error cldashboard-migration-notice">
+
+			<div class="notice-body">
+				<div class="notice-icon">
+					<img src="<?php echo esc_url( CUSTOM_LOGIN_DASHBOARD_PLUGIN_URL ); ?>/assets/images/logo.png">
+				</div>
+				<div class="notice-content">
+					<h2>Improve Your Login Page Customization Experience!</h2>
+					<p>
+						Dear <strong><?php echo esc_html( $current_user->display_name ); ?></strong>, we're excited to suggest you to migrate Erident Custom Login & Dashboard plugin to <strong>Ultimate Dashboard</strong> plugin with an instant single click.
+					</p>
+
+					<p>
+						<strong>What does that mean for my existing customization?</strong><br>
+						Your existing dashboard & login customization with Erident plugin will be automatically imported & implemented in Ultimate Dashboard.<br>
+						In fact, Ultimate Dashboard improve the login customization experience a lot using WordPress customizer!<br>
+						It also provides much more powerful dashboard customization like widgets & white-label, login redirect, and custom admin page.<br>
+					</p>
+
+					<p>
+						Please click the button below to safely migrate to Ultimate Dashboard.
+					</p>
+
+					<p>
+						<a href="" style="font-weight: 700;" class="button button-primary cldashboard-button cldashboard-migration-button">
+							Start Migration
+						</a>
+					</p>
+
+					<div class="cldashboard-migration-statuses">
+						<div class="cldashboard-migration-status migration-failed">
+							<i class="dashicons dashicons-no"></i>
+							<span>Migration failed:</span> <span class="error-message"></span>
+						</div>
+						<div class="cldashboard-migration-status cldashboard-uninstalled">
+							<span class="loader"></span>
+							<i class="dashicons dashicons-yes"></i>
+							<span class="process-message">Old Swift Control is uninstalled.</span>
+						</div>
+						<div class="cldashboard-migration-status ultimate-dashboard-installed">
+							<span class="loader"></span>
+							<i class="dashicons dashicons-yes"></i>
+							<span class="process-message">New Better Admin Bar is installed.</span>
+						</div>
+						<div class="cldashboard-migration-status ultimate-dashboard-activated">
+							<span class="loader"></span>
+							<i class="dashicons dashicons-yes"></i>
+							<span class="process-message">New Better Admin Bar is activated.</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<?php
 
 	}
 
