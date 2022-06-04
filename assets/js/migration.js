@@ -13,6 +13,8 @@
 		".cldashboard-migration-status.migration-failed"
 	);
 
+	if (!elms.migrationFailed) return;
+
 	elms.errorMessage = elms.migrationFailed.querySelector(".error-message");
 
 	elms.uninstallOldPlugin = document.querySelector(
