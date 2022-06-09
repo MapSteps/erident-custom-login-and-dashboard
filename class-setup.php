@@ -296,7 +296,7 @@ class Setup {
 		);
 
 		$js_objects = array(
-			'redirectUrl' => admin_url( 'options-general.php?page=better-admin-bar' ),
+			'redirectUrl' => admin_url( 'edit.php?post_type=udb_widgets&page=udb_features' ),
 			'oldPlugin'   => [
 				'slug'     => $old_plugin_slug,
 				'basename' => $old_plugin_basename,
