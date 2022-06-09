@@ -87,6 +87,8 @@
 			"Uninstalling Erident Custom Login & Dashboard plugin...";
 		elms.uninstallOldPlugin.classList.add("is-waiting");
 
+		elms.migrationFailed.classList.remove("is-done");
+
 		$.ajax({
 			url: ajaxurl,
 			type: "post",
@@ -94,12 +96,8 @@
 			data: data,
 		})
 			.done(function (r) {
-				if (!r.success) {
-					elms.uninstallOldPlugin.classList.remove("is-waiting");
-					elms.errorMessage.innerHTML = r.data;
-					elms.migrationFailed.classList.add("is-done");
-					return;
-				}
+				// Error is handled in the "fail" callback.
+				if (!r.success) return;
 
 				elms.uninstallOldPluginMsg.innerHTML = r.data;
 				elms.uninstallOldPlugin.classList.remove("is-waiting");
@@ -113,10 +111,14 @@
 				installUltimateDashboard();
 			})
 			.fail(function (jqXHR) {
+				var errorMessage =
+					"Something went wrong. Are you connected to the internet?";
+
 				if (jqXHR.responseJSON && jqXHR.responseJSON.data) {
-					elms.errorMessage.innerHTML = jqXHR.responseJSON.data;
+					errorMessage = jqXHR.responseJSON.data;
 				}
 
+				elms.errorMessage.innerHTML = errorMessage;
 				elms.uninstallOldPlugin.classList.remove("is-waiting");
 				elms.migrationFailed.classList.add("is-done");
 				loading.stop();

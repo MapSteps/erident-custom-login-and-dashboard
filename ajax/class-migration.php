@@ -81,7 +81,7 @@ class Migration {
 
 		// Check against internet connection.
 		if ( ! $internet_connected ) {
-			wp_send_json_error( __( "Seems like you're not connected to internet. The internet is required to download Ultimate Dashboard plugin. Please check your internet connection. If you're using a proxy, try to disable it.", 'erident-custom-login-and-dashboard' ), 503 );
+			wp_send_json_error( "Seems like you're not connected to internet. The internet is required to download Ultimate Dashboard plugin.<br>Please check your internet connection. If you're using a proxy, try to disable it.", 503 );
 		}
 
 		$this->old_plugin_basename = sanitize_text_field( $_POST['old_plugin_basename'] );
