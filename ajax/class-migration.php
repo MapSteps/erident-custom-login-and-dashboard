@@ -66,7 +66,53 @@ class Migration {
 			);
 		}
 
+		if ( ! function_exists( 'fsockopen' ) ) {
+			wp_send_json_error(
+				__(
+					"Your server doesn't have the fsockopen function enabled. This is required to check the internet connection. Please contact your host and ask them to enable this function.",
+					'erident-custom-login-and-dashboard'
+				),
+				503
+			);
+		}
+
+		$internet_connected = $this->is_internet_connected();
+		$internet_connected = ! $internet_connected ? $this->is_internet_connected( 443 ) : $internet_connected;
+
+		// Check against internet connection.
+		if ( ! $internet_connected ) {
+			wp_send_json_error( __( "Seems like you're not connected to internet. The internet is required to download Ultimate Dashboard plugin. Please check your internet connection. If you're using a proxy, try to disable it.", 'erident-custom-login-and-dashboard' ), 503 );
+		}
+
 		$this->old_plugin_basename = sanitize_text_field( $_POST['old_plugin_basename'] );
+	}
+
+	/**
+	 * Check if the internet is connected.
+	 *
+	 * Thanks to Alfred <https://stackoverflow.com/users/484082/alfred>
+	 *
+	 * @link https://stackoverflow.com/questions/4860365/determine-in-php-script-if-connected-to-internet#answer-4860432
+	 *
+	 * @param int $port The port to check.
+	 * @return bool
+	 */
+	private function is_internet_connected( $port = 80 ) {
+
+		// Website, port (try 80 or 443).
+		$connected = @fsockopen( 'google.com', 80 );
+
+		if ( $connected ) {
+			// Action when connected.
+			$is_connected = true;
+			fclose( $connected );
+		} else {
+			// Action in connection failure.
+			$is_connected = false;
+		}
+
+		return $is_connected;
+
 	}
 
 	/**
@@ -85,6 +131,8 @@ class Migration {
 		$deletion = delete_plugins( [ $this->old_plugin_basename ] );
 
 		if ( $deletion && ! is_wp_error( $deletion ) ) {
+			// If the plugin is deleted successfully, let's delete the option.
+			delete_option( 'plugin_erident_settings' );
 			wp_send_json_success( __( 'Erident Custom Login & Dashboard plugin has been removed', 'erident-custom-login-and-dashboard' ) );
 		} elseif ( is_wp_error( $deletion ) ) {
 			wp_send_json_error( $deletion->get_error_message(), 403 );
