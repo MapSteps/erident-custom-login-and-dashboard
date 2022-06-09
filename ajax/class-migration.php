@@ -459,7 +459,7 @@ class Migration {
 			$udb_login_options['remove_register_lost_pw_link'] = 1;
 		}
 
-		$remove_back_to_blog_link = isset( $settings['dashboard_check_backtoblog'] ) ? $settings['dashboard_check_backtoblog'] : 0;
+		$remove_back_to_blog_link = isset( $erident_options['dashboard_check_backtoblog'] ) ? $erident_options['dashboard_check_backtoblog'] : 0;
 		$remove_back_to_blog_link = 'yes' === strtolower( $remove_back_to_blog_link ) ? 1 : $remove_back_to_blog_link;
 		$remove_back_to_blog_link = 'no' === strtolower( $remove_back_to_blog_link ) ? 0 : $remove_back_to_blog_link;
 		$remove_back_to_blog_link = absint( $remove_back_to_blog_link );
