@@ -336,11 +336,11 @@ class Setup {
 				<div class="notice-content">
 					<h2>Erident is now Ultimate Dashboard!</h2>
 					<p>
-						Dear <strong><?php echo esc_html( $current_user->display_name ); ?></strong>, <br>we are excited to let you know that <strong>Erident Custom Login and Dashboard</strong> is now <strong>Ultimate Dashboard</strong>!
+						Dear <strong style="color: #1d2327"><?php echo esc_html( $current_user->display_name ); ?></strong>, <br>we are excited to let you know that <strong style="color: #1d2327">Erident Custom Login and Dashboard</strong> is now <strong style="color: #1d2327">Ultimate Dashboard</strong>!
 					</p>
 
 					<p style="margin-bottom: -3px;">
-						<strong>What does this mean for me?</strong>
+						<strong style="color: #1d2327; font-weight: 700;">What does this mean for me?</strong>
 					</p>
 
 					<p>
@@ -348,7 +348,7 @@ class Setup {
 					</p>
 
 					<p style="margin-bottom: -3px;">
-						<strong>What happens to my existing customizations?</strong>
+						<strong style="color: #1d2327; font-weight: 700;">What happens to my existing customizations?</strong>
 					</p>
 
 					<p>
