@@ -335,7 +335,7 @@ class Setup {
 					<h2 style="font-size: 24px; font-weight: 400;">Erident is now Ultimate Dashboard!</h2>
 
 					<p style="font-size: 16px; opacity: .7;">
-						We are excited to let you know that <strong style="color: #1d2327">Erident Custom Login and Dashboard</strong> is now <strong style="color: #1d2327">Ultimate Dashboard</strong>!
+						Migrate to Ultimate Dashboard today & unlock more powerful features (for free)!
 					</p>
 
 					<hr style="border-color: #eee; border-top: none;">
@@ -364,7 +364,7 @@ class Setup {
 
 					<p>
 						<a href="" style="padding: 10px 40px;" class="button button-primary cldashboard-button cldashboard-migration-button">
-							Start Migration
+							Start One-Click Migration
 						</a>
 					</p>
 
