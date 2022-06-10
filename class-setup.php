@@ -325,7 +325,7 @@ class Setup {
 	public function migration_notice() {
 		?>
 
-		<div class="notice notice-error cldashboard-migration-notice" style="border: 1px solid #e5e5e5;">
+		<div class="notice notice-error cldashboard-migration-notice is-dismissible" style="border: 1px solid #e5e5e5;">
 
 			<div class="notice-body">
 				<div class="notice-icon">
