@@ -331,19 +331,28 @@ class Setup {
 
 			<div class="notice-body">
 				<div class="notice-icon">
-					<img src="<?php echo esc_url( CUSTOM_LOGIN_DASHBOARD_PLUGIN_URL ); ?>/assets/images/logo.png">
+					<img src="<?php echo esc_url( CUSTOM_LOGIN_DASHBOARD_PLUGIN_URL ); ?>/assets/images/erident-logo.png">
 				</div>
 				<div class="notice-content">
-					<h2>Improve Your Login Page Customization Experience!</h2>
+					<h2>Erident is now Ultimate Dashboard!</h2>
 					<p>
-						Dear <strong><?php echo esc_html( $current_user->display_name ); ?></strong>, we're excited to suggest you to migrate Erident Custom Login & Dashboard plugin to <strong>Ultimate Dashboard</strong> plugin with an instant single click.
+						Dear <strong><?php echo esc_html( $current_user->display_name ); ?></strong>, <br>we are excited to let you know that <strong>Erident Custom Login and Dashboard</strong> is now <strong>Ultimate Dashboard</strong>!
+					</p>
+
+					<p style="margin-bottom: -3px;">
+						<strong>What does this mean for me?</strong>
 					</p>
 
 					<p>
-						<strong>What does that mean for my existing customization?</strong><br>
-						Your existing dashboard & login customization with Erident plugin will be automatically imported & implemented in Ultimate Dashboard.<br>
-						In fact, Ultimate Dashboard improve the login customization experience a lot using WordPress customizer!<br>
-						It also provides much more powerful dashboard customization like widgets & white-label, login redirect, and custom admin page.<br>
+						It means a much better (live editing) experience when customizing your WordPress login page!<br> But not only that, there will be even more options available for you to fully customize your login screen.
+					</p>
+
+					<p style="margin-bottom: -3px;">
+						<strong>What happens to my existing customizations?</strong>
+					</p>
+
+					<p>
+						Don't worry! Your existing settings will stay in place.<br> All Erident settings will be migrated over to Ultimate Dashboard.
 					</p>
 
 					<p>
