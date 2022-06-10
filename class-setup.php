@@ -323,24 +323,27 @@ class Setup {
 	 * Notice about migration to "Ultimate Dashboard".
 	 */
 	public function migration_notice() {
-
-		$current_user = wp_get_current_user();
 		?>
 
-		<div class="notice notice-error cldashboard-migration-notice">
+		<div class="notice notice-error cldashboard-migration-notice" style="border: 1px solid #e5e5e5;">
 
 			<div class="notice-body">
 				<div class="notice-icon">
 					<img src="<?php echo esc_url( CUSTOM_LOGIN_DASHBOARD_PLUGIN_URL ); ?>/assets/images/erident-logo.png">
 				</div>
 				<div class="notice-content">
-					<h2>Erident is now Ultimate Dashboard!</h2>
-					<p>
-						Dear <strong style="color: #1d2327"><?php echo esc_html( $current_user->display_name ); ?></strong>, <br>we are excited to let you know that <strong style="color: #1d2327">Erident Custom Login and Dashboard</strong> is now <strong style="color: #1d2327">Ultimate Dashboard</strong>!
+					<h2 style="font-size: 24px; font-weight: 400;">Erident is now Ultimate Dashboard!</h2>
+
+					<p style="font-size: 16px; opacity: .7;">
+						We are excited to let you know that <strong style="color: #1d2327">Erident Custom Login and Dashboard</strong> is now <strong style="color: #1d2327">Ultimate Dashboard</strong>!
 					</p>
 
+					<hr style="border-color: #eee; border-top: none;">
+
+					<img style="max-width: 900px; width:  100%; margin-bottom: 10px;" src="<?php echo esc_url( CUSTOM_LOGIN_DASHBOARD_PLUGIN_URL ); ?>/assets/images/before-after.png">
+
 					<p style="margin-bottom: -3px;">
-						<strong style="color: #1d2327; font-weight: 700;">What does this mean for me?</strong>
+						<strong style="color: #1d2327; font-size: 16px;">What does this mean for me?</strong>
 					</p>
 
 					<p>
@@ -348,7 +351,7 @@ class Setup {
 					</p>
 
 					<p style="margin-bottom: -3px;">
-						<strong style="color: #1d2327; font-weight: 700;">What happens to my existing customizations?</strong>
+						<strong style="color: #1d2327; font-size: 16px;">What happens to my existing customizations?</strong>
 					</p>
 
 					<p>
@@ -360,7 +363,7 @@ class Setup {
 					</p>
 
 					<p>
-						<a href="" style="font-weight: 700;" class="button button-primary cldashboard-button cldashboard-migration-button">
+						<a href="" style="padding: 10px 40px;" class="button button-primary cldashboard-button cldashboard-migration-button">
 							Start Migration
 						</a>
 					</p>
