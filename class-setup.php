@@ -347,7 +347,7 @@ class Setup {
 					</p>
 
 					<p>
-						It means a much better (live editing) experience when customizing your WordPress login page!<br> But not only that, there will be even more options available for you to fully customize your login screen.
+						It means a much better (live editing) experience when customizing your WordPress login page!<br> Not only that, there will be even more options available for you to fully customize your login screen.
 					</p>
 
 					<p style="margin-bottom: -3px;">
