@@ -69,7 +69,7 @@ class Migration {
 		if ( ! function_exists( 'fsockopen' ) ) {
 			wp_send_json_error(
 				__(
-					"Your server does not have the fsockopen function enabled. This is required to check the internet connection. Please contact your host and ask them to enable this function.",
+					'Your server does not have the fsockopen function enabled. This is required to check the internet connection. Please contact your host and ask them to enable this function.',
 					'erident-custom-login-and-dashboard'
 				),
 				503
@@ -81,7 +81,7 @@ class Migration {
 
 		// Check against internet connection.
 		if ( ! $internet_connected ) {
-			wp_send_json_error( "Seems like you are not connected to the internet. A stable connection is required to download the Ultimate Dashboard plugin.<br>Please check your internet connection. If you are using a proxy, try to disable it.", 503 );
+			wp_send_json_error( 'Seems like you are not connected to the internet. A stable connection is required to download the Ultimate Dashboard plugin.<br>Please check your internet connection. If you are using a proxy, try to disable it.', 503 );
 		}
 
 		$this->old_plugin_basename = sanitize_text_field( $_POST['old_plugin_basename'] );
@@ -125,6 +125,8 @@ class Migration {
 		}
 
 		$this->migrate_settings();
+
+		update_option( 'udb_migration_from_erident', 1 );
 
 		deactivate_plugins( $this->old_plugin_basename );
 
