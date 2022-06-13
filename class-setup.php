@@ -358,6 +358,14 @@ class Setup {
 						Don't worry! Your existing settings will stay in place.<br> All Erident settings will be migrated over to Ultimate Dashboard.
 					</p>
 
+					<p style="margin-bottom: -3px;">
+						<strong style="color: #1d2327; font-size: 16px;">Why NOT just keep Erident?</strong>
+					</p>
+
+					<p style="color: tomato; font-weight: 700; opacity: .8;">
+						Erident Custom Login & Dashboard is no longer actively supported.<br> To keep getting feature-updates & security fixes please upgrade to Ultimate Dashboard.
+					</p>
+
 					<p>
 						Please click the button below to safely migrate to Ultimate Dashboard.
 					</p>
