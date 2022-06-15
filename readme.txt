@@ -2,7 +2,7 @@
 Contributors: davidvongries, libinvbabu
 Tags: login, customisation, admin, dashboard, customise, erident, custom login, form, logo, customize, branding, login customizer, CSS, admin login, white label, login background, custom login page
 Requires at least: 3.0.0
-Tested up to: 5.9
+Tested up to: 6.0
 Stable tag: 4.1
 Requires PHP: 5.6
 License: GPL-3.0 License
