@@ -76,6 +76,11 @@
 		var bgImageField = document.querySelector(".cldashboard-bg-image-field");
 		if (bgImageField) setupMediaField(bgImageField);
 
+		var formBgImageField = document.querySelector(
+			".cldashboard-form-bg-image-field"
+		);
+		if (formBgImageField) setupMediaField(formBgImageField);
+
 		var logoImageField = document.querySelector(
 			".cldashboard-logo-image-field"
 		);
