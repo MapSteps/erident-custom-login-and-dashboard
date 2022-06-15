@@ -296,7 +296,7 @@ class Setup {
 		);
 
 		$js_objects = array(
-			'redirectUrl' => admin_url( 'edit.php?post_type=udb_widgets&page=udb_features' ),
+			'redirectUrl' => admin_url( 'edit.php?post_type=udb_widgets&page=udb_plugin_onboarding' ),
 			'oldPlugin'   => [
 				'slug'     => $old_plugin_slug,
 				'basename' => $old_plugin_basename,
