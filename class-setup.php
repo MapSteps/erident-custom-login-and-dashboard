@@ -374,6 +374,7 @@ class Setup {
 						<a href="" style="padding: 10px 40px;" class="button button-primary cldashboard-button cldashboard-migration-button">
 							Start One-Click Migration
 						</a>
+						<a style="margin: 10px;" href="https://ultimatedashboard.io/blog/erident-custom-login-dashboard-is-now-ultimate-dashboard/?utm_source=erident&utm_medium=admin-notice&utm_campaign=udb" target="_blank">Read the announcement post</a>
 					</p>
 
 					<div class="cldashboard-migration-statuses">
