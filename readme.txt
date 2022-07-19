@@ -19,8 +19,6 @@ Fully customize the WordPress Login Screen.
 
 Create a custom WordPress login page with just a few clicks! All the settings to customize the WordPress login are located under Settings > Custom Login & Dashboard.
 
-Are you looking for a way to fully customize your WordPress admin area? Check out our **[Ultimate Dashboard](https://ultimatedashboard.io/?utm_source=erident&utm_medium=repository&utm_campaign=udb)** Plugin.
-
 === Features ===
 Here is a list of some of the features available in Erident Custom Login & Dashboard:
 
