@@ -13,7 +13,7 @@ Fully customize the WordPress Login Screen.
 == Description ==
 **Caution: Erident Custom Login and Dashboard is now Ultimate Dashboard. Please install [Ultimate Dashboard](https://ultimatedashboard.io/?utm_source=erident&utm_medium=repository&utm_campaign=udb) instead.**
 
-**If you are an existing user of the Erident plugin you will be greeted with a 1-click migration to savely migrate from Erident to Ultimate Dashboard from your WordPress admin.**
+**If you are an existing user of the Erident plugin you will be greeted with a 1-click migration to safely migrate from Erident to Ultimate Dashboard from your WordPress admin.**
 
 **Erident Custom Login and Dashboard** is the #1 rated Plugin to customize the WordPress Login Screen. It's a clean & minimalist way for you to fully customize almost all aspects of the WordPress Login Page.
 
@@ -57,7 +57,7 @@ Yes! For more options and to fully customize the WordPress dashboard, check out 
 
 == Changelog ==
 = 4.1 | July 19, 2022 =
-* Announcement: Erident Custom Login & Dashboard is now Ultimate Dashboard! You will be greeted with a 1-click migration to savely migrate from Erident to Ultimate Dashboard. Learn more about why we have made this decision in the announcement post - https://ultimatedashboard.io/blog/erident-custom-login-dashboard-is-now-ultimate-dashboard/
+* Announcement: Erident Custom Login & Dashboard is now Ultimate Dashboard! You will be greeted with a 1-click migration to safely migrate from Erident to Ultimate Dashboard. Learn more about why we have made this decision in the announcement post - https://ultimatedashboard.io/blog/erident-custom-login-dashboard-is-now-ultimate-dashboard/
 * Fixed: Form background image button didn't trigger the media popup
 
 = 4.0.1 | April 29, 2022 =
