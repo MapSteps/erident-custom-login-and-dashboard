@@ -11,11 +11,11 @@ License URI: https://oss.ninja/gpl-3.0?organization=David%20Vongries&project=Eri
 Fully customize the WordPress Login Screen.
 
 == Description ==
-**Caution: Erident Custom Login and Dashboard is now Ultimate Dashboard. Please install [Ultimate Dashboard](https://ultimatedashboard.io/?utm_source=erident&utm_medium=repository&utm_campaign=udb) instead.**
+**Caution: Erident Custom Login and Dashboard is now Ultimate Dashboard. Please install [Ultimate Dashboard](https://wordpress.org/plugins/ultimate-dashboard/) instead.**
 
-**If you are an existing user of the Erident plugin you will be greeted with a 1-click migration to safely migrate from Erident to Ultimate Dashboard from your WordPress admin.**
+**If you are an existing user of the Erident plugin you will be greeted with a 1-click migration to safely migrate from Erident to Ultimate Dashboard from your WordPress admin dashboard.**
 
-**Erident Custom Login and Dashboard** is the #1 rated Plugin to customize the WordPress Login Screen. It's a clean & minimalist way for you to fully customize almost all aspects of the WordPress Login Page.
+Erident Custom Login and Dashboard is the #1 rated Plugin to customize the WordPress Login Screen. It's a clean & minimalist way for you to fully customize almost all aspects of the WordPress Login Page.
 
 Create a custom WordPress login page with just a few clicks! All the settings to customize the WordPress login are located under Settings > Custom Login & Dashboard.
 
