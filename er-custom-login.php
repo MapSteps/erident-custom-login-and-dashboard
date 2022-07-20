@@ -5,7 +5,7 @@
  * Description: Fully customize the WordPress Login Screen.
  * Text Domain: erident-custom-login-and-dashboard
  * Domain Path: /languages
- * Version: 4.1
+ * Version: 4.1.1
  * Author: David Vongries
  * Author URI: https://davidvongries.com/
  * License: GPL-3.0
