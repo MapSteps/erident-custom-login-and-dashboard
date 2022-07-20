@@ -219,7 +219,10 @@ class Migration {
 		$udb_login_options = get_option( 'udb_login', [] );
 		$erident_options   = get_option( 'plugin_erident_settings', [] );
 
+		$udb_login_options['logo_url'] = get_bloginfo( 'url' );
+
 		if ( empty( $erident_options ) ) {
+			update_option( 'udb_login', $udb_login_options );
 			return;
 		}
 
