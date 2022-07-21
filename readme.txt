@@ -15,7 +15,7 @@ Fully customize the WordPress Login Screen.
 
 **If you are an existing user of the Erident plugin you will be greeted with a 1-click migration to safely migrate from Erident to Ultimate Dashboard from your WordPress admin dashboard.**
 
-**Before migrating: Please make sure you are running the latest version of the Erident plugin (4.2) before running the 1-click migration. The latest version fixes an issue where non-admins were able to trigger the migration process which fails to install Ultimate Dashboard. If that’s been the case for you, please install Ultimate Dashboard manually. Your data was already migrated successfully.**
+**IMPORTANT! Please make sure you have the latest version of the Erident plugin (4.2) installed before running the 1-click migration. The latest version fixes an earlier issue where non-admins were able to trigger the migration process which failed to install Ultimate Dashboard. If that’s been the case for you, please [install Ultimate Dashboard](https://wordpress.org/plugins/ultimate-dashboard/) manually. Your data was already migrated successfully.**
 
 Erident Custom Login and Dashboard is the #1 rated Plugin to customize the WordPress Login Screen. It's a clean & minimalist way for you to fully customize almost all aspects of the WordPress Login Page.
 
