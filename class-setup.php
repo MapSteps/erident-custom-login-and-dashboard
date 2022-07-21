@@ -272,6 +272,10 @@ class Setup {
 	 */
 	public function migration_notice_scripts() {
 
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+
 		wp_enqueue_script('updates');
 
 		wp_enqueue_style( 'cldashboard-migration', CUSTOM_LOGIN_DASHBOARD_PLUGIN_URL . '/assets/css/migration.css', array(), CUSTOM_LOGIN_DASHBOARD_PLUGIN_VERSION );
@@ -323,6 +327,11 @@ class Setup {
 	 * Notice about migration to "Ultimate Dashboard".
 	 */
 	public function migration_notice() {
+
+		if ( ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+
 		?>
 
 		<div class="notice notice-error cldashboard-migration-notice is-dismissible" style="border: 1px solid #e5e5e5;">
