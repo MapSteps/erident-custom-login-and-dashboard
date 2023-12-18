@@ -193,7 +193,7 @@ return function () {
 				</li>
 			</ul>
 
-			<p class="credit"><?php _e( 'Made with ❤ in Aschaffenburg, Germany', 'erident-custom-login-and-dashboard' ); ?></p>
+			<p class="credit"><?php _e( 'Made with ❤ in Torsby, Sweden', 'erident-custom-login-and-dashboard' ); ?></p>
 
 		</div>
 
